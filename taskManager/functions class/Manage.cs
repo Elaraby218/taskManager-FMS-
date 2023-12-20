@@ -46,5 +46,46 @@ namespace taskManager.functions_class
                 }
             };
         }
+
+        static public void HideForm(int Form_number)
+        {
+            Application.OpenForms[Form_number].Hide();
+        }
+
+        static public void CloseForm(int Form_number)
+        {
+            if (QMsgBox("Are you sure", "Exit"))
+                Application.OpenForms[Form_number].Close();
+        }
+
+        static public void OpenForm(int Form_number)
+        {
+            Application.OpenForms[Form_number].Show();
+        }
+
+      
+
     }
+        public static class Transition
+        {
+            static public void FadeOut(Form frm )
+            {
+                for (double i = 1.0; i >= 0; i -= 0.1)
+                {
+                    frm.Opacity = i;
+                    frm.Refresh();
+                    System.Threading.Thread.Sleep(50);
+                }
+            }
+
+            static public void FadeIn(Form frm)
+            {
+                for (double i = 0.0; i <= 1.0; i += 0.1)
+                {
+                    frm.Opacity = i;
+                    frm.Refresh();
+                    System.Threading.Thread.Sleep(50);
+                }
+            }
+        }
 }

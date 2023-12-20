@@ -3,6 +3,7 @@ using taskManager.functions_class;
 
 namespace taskManager
 {
+    // form0
     public partial class Form1 : Form
     {
         public Form1()
@@ -13,12 +14,12 @@ namespace taskManager
             this.Paint += Form1_Paint;
             Manage.CustomizeButtonAppearance(Login_btn);
             Manage.CustomizeButtonAppearance(Exit_btn);
-            Manage.CustomizeButtonAppearance(Signup_btn);
+            Manage.CustomizeButtonAppearance(Signup_btn);       
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             GraphicsPath path = new GraphicsPath();
-            int cornerRadius = 20; 
+            int cornerRadius = 20;
             path.AddArc(new Rectangle(0, 0, cornerRadius * 2, cornerRadius * 2), 180, 90);
             path.AddArc(new Rectangle(this.Width - cornerRadius * 2, 0, cornerRadius * 2, cornerRadius * 2), -90, 90);
             path.AddArc(new Rectangle(this.Width - cornerRadius * 2, this.Height - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2), 0, 90);
@@ -36,8 +37,17 @@ namespace taskManager
 
         private void Exit_btn_Click(object sender, EventArgs e)
         {
-            if(Manage.QMsgBox("Are you sure" , "Exit"))
+            if (Manage.QMsgBox("Are you sure", "Exit"))
                 this.Close();
+        }
+
+        private void Login_btn_Click(object sender, EventArgs e)
+        {
+            SignUp_Form frm = new SignUp_Form();
+            Transition.FadeOut(frm);
+            frm.Show();
+            this.Hide();
+            Transition.FadeIn(frm);
         }
     }
 }
