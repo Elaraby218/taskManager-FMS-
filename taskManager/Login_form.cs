@@ -65,6 +65,7 @@ namespace taskManager
             Password_txtbox.Text = "";
             Conf_txtbox.Text = ""; 
             Username_txtbox.Text = "";
+            //
         }
     }
 }
