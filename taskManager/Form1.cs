@@ -43,7 +43,11 @@ namespace taskManager
 
         private void Login_btn_Click(object sender, EventArgs e)
         {
-
+            longin_form frm = new longin_form();
+          //  Transition.FadeOut(frm);
+            frm.Show();
+            this.Hide();
+           // Transition.FadeIn(frm);
         }
 
         private void Signup_btn_Click(object sender, EventArgs e)

@@ -19,9 +19,9 @@ namespace taskManager
         public SignUp_Form()
         {
             InitializeComponent();
+            pictureBox1.ImageLocation = Environment.CurrentDirectory + "//resources//loginphto.PNG";
             this.FormBorderStyle = FormBorderStyle.None;
             this.Paint += Login_form_Paint;
-            pictureBox1.ImageLocation = Environment.CurrentDirectory + "//resources//loginphto.PNG";
             Manage.CustomizeButtonAppearance(SignUp_btn);
             Manage.CustomizeButtonAppearance(Exit_btn);
             Manage.CustomizeButtonAppearance(Clearall_btn);
