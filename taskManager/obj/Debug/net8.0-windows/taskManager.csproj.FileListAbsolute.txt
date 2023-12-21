@@ -50,3 +50,4 @@ J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\refint\taskManager.dll
 J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.pdb
 J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.genruntimeconfig.cache
 J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\ref\taskManager.dll
+J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.longin_form.resources

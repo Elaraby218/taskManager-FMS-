@@ -144,6 +144,7 @@
             Signup_btn.TabIndex = 3;
             Signup_btn.Text = "SignUp";
             Signup_btn.UseVisualStyleBackColor = false;
+            Signup_btn.Click += Signup_btn_Click;
             // 
             // Exit_btn
             // 

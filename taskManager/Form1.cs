@@ -14,7 +14,7 @@ namespace taskManager
             this.Paint += Form1_Paint;
             Manage.CustomizeButtonAppearance(Login_btn);
             Manage.CustomizeButtonAppearance(Exit_btn);
-            Manage.CustomizeButtonAppearance(Signup_btn);       
+            Manage.CustomizeButtonAppearance(Signup_btn);
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -42,6 +42,11 @@ namespace taskManager
         }
 
         private void Login_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Signup_btn_Click(object sender, EventArgs e)
         {
             SignUp_Form frm = new SignUp_Form();
             Transition.FadeOut(frm);
