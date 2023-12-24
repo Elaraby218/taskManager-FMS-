@@ -71,7 +71,7 @@ namespace taskManager.Data
 
 
         [Required]
-        [Column(TypeName = "bool")]
+        [Column(TypeName = "bit")]
         [Display(Name = "Is task checked ?")]
         public bool Done { get; set; }
 
@@ -117,7 +117,7 @@ namespace taskManager.Data
         [Display(Name = "End Date")]
         public string Date_end { get; set; }
 
-        [Column(TypeName = "bool")]
+        [Column(TypeName = "bit")]
         [Display(Name = "Is task checked ?")]
         public bool Done { get; set; }
     }

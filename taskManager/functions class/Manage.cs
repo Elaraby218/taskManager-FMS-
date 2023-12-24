@@ -4,7 +4,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using taskManager.Data;
 
 
 // manage all thing 
@@ -13,18 +13,18 @@ namespace taskManager.functions_class
     // clas manages
     static public class Manage
     {
-        static public bool QMsgBox(string mainstr , string lbl)
+        static public bool QMsgBox(string mainstr, string lbl)
         {
-            var ans = MessageBox.Show(mainstr,lbl, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return (ans == DialogResult.Yes); 
+            var ans = MessageBox.Show(mainstr, lbl, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return (ans == DialogResult.Yes);
         }
 
         static public void CustomizeButtonAppearance(Button button)
         {
             button.FlatStyle = FlatStyle.Flat;
             button.FlatAppearance.BorderSize = 0;
-           // button.BackColor = Color.LightBlue; // Set your desired background color
-           // button.FlatAppearance.MouseOverBackColor = Color.SkyBlue; // Set the color when the mouse is over the button
+            // button.BackColor = Color.LightBlue; // Set your desired background color
+            // button.FlatAppearance.MouseOverBackColor = Color.SkyBlue; // Set the color when the mouse is over the button
             button.Paint += (sender, e) =>
             {
                 GraphicsPath path = new GraphicsPath();
@@ -63,29 +63,44 @@ namespace taskManager.functions_class
             Application.OpenForms[Form_number].Show();
         }
 
-      
+
 
     }
-        public static class Transition
+    public static class Transition
+    {
+        static public void FadeOut(Form frm)
         {
-            static public void FadeOut(Form frm )
+            for (double i = 1.0; i >= 0; i -= 0.1)
             {
-                for (double i = 1.0; i >= 0; i -= 0.1)
-                {
-                    frm.Opacity = i;
-                    frm.Refresh();
-                    System.Threading.Thread.Sleep(50);
-                }
-            }
-
-            static public void FadeIn(Form frm)
-            {
-                for (double i = 0.0; i <= 1.0; i += 0.1)
-                {
-                    frm.Opacity = i;
-                    frm.Refresh();
-                    System.Threading.Thread.Sleep(50);
-                }
+                frm.Opacity = i;
+                frm.Refresh();
+                System.Threading.Thread.Sleep(50);
             }
         }
+
+        static public void FadeIn(Form frm)
+        {
+            for (double i = 0.0; i <= 1.0; i += 0.1)
+            {
+                frm.Opacity = i;
+                frm.Refresh();
+                System.Threading.Thread.Sleep(50);
+            }
+        }
+    }
+
+    public static class ManageDatabase
+    {
+        static public void EnsureConnected()
+        {
+            AppDbContext db = new AppDbContext();
+            if (!db.Database.EnsureCreated())
+            {
+                MessageBox.Show("An Error Ecured\nPlease restart the programm","Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+
+
 }

@@ -39,6 +39,7 @@
             Login_btn = new Button();
             Signup_btn = new Button();
             Exit_btn = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -160,12 +161,23 @@
             Exit_btn.UseVisualStyleBackColor = false;
             Exit_btn.Click += Exit_btn_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(594, 632);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 5;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(840, 682);
+            Controls.Add(button1);
             Controls.Add(Exit_btn);
             Controls.Add(Signup_btn);
             Controls.Add(Login_btn);
@@ -194,5 +206,6 @@
         private Button Login_btn;
         private Button Signup_btn;
         private Button Exit_btn;
+        private Button button1;
     }
 }
