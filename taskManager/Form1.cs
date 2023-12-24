@@ -15,7 +15,7 @@ namespace taskManager
             Manage.CustomizeButtonAppearance(Login_btn);
             Manage.CustomizeButtonAppearance(Exit_btn);
             Manage.CustomizeButtonAppearance(Signup_btn);           
-            button1.Hide();
+            
 
         }
         private void Form1_Paint(object sender, PaintEventArgs e)

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using taskManager.Data;
 using taskManager.functions_class;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -63,9 +64,24 @@ namespace taskManager
             Email_txtbox.Text = "";
             Phone_txtbox.Text = "";
             Password_txtbox.Text = "";
-            Conf_txtbox.Text = ""; 
+            Conf_txtbox.Text = "";
             Username_txtbox.Text = "";
             //
+        }
+
+        private void SignUp_btn_Click(object sender, EventArgs e)
+        {
+            UserTable user = new UserTable();
+            user.Email = Email_txtbox.Text;
+            user.Name = Name_txtbox.Text;
+            user.User_Name = Username_txtbox.Text;
+            user.Phone = Phone_txtbox.Text;          
+            ManageDatabase.AddUser(user);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

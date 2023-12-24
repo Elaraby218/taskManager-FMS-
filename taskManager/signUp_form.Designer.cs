@@ -162,12 +162,13 @@
             // 
             checkBox1.AutoSize = true;
             checkBox1.ForeColor = Color.Transparent;
-            checkBox1.Location = new Point(146, 688);
+            checkBox1.Location = new Point(144, 668);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(155, 19);
             checkBox1.TabIndex = 6;
             checkBox1.Text = "I Accept All Terms of use";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // label6
             // 
@@ -256,6 +257,7 @@
             SignUp_btn.TabIndex = 3;
             SignUp_btn.Text = "Sign Up";
             SignUp_btn.UseVisualStyleBackColor = false;
+            SignUp_btn.Click += SignUp_btn_Click;
             // 
             // Clearall_btn
             // 

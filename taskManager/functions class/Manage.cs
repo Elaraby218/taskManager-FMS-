@@ -91,14 +91,23 @@ namespace taskManager.functions_class
 
     public static class ManageDatabase
     {
-        static public void EnsureConnected()
+        static AppDbContext db = new AppDbContext();
+        public static void EnsureConnected()
         {
-            AppDbContext db = new AppDbContext();
-            if (!db.Database.EnsureCreated())
+            if (db.Database.EnsureCreated())
             {
-                MessageBox.Show("An Error Ecured\nPlease restart the programm","Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Done");
             }
+            else
+            {
+                MessageBox.Show("Already Done");
+            }
+        }
+
+        public static void AddUser(UserTable usr)
+        {
+            db.users.Add(usr);
+            db.SaveChanges();
         }
     }
 
