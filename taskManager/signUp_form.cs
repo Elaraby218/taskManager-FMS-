@@ -75,7 +75,8 @@ namespace taskManager
             user.Email = Email_txtbox.Text;
             user.Name = Name_txtbox.Text;
             user.User_Name = Username_txtbox.Text;
-            user.Phone = Phone_txtbox.Text;          
+            user.Phone = Phone_txtbox.Text;   
+            user.Password = Password_txtbox.Text;
             ManageDatabase.AddUser(user);
         }
 

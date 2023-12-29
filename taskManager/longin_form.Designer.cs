@@ -159,6 +159,7 @@
             loginbtn.TabIndex = 14;
             loginbtn.Text = "Login";
             loginbtn.UseVisualStyleBackColor = false;
+            loginbtn.Click += loginbtn_Click;
             // 
             // longin_form
             // 

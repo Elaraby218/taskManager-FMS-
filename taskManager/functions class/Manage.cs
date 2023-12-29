@@ -65,6 +65,7 @@ namespace taskManager.functions_class
 
 
 
+
     }
     public static class Transition
     {
@@ -108,7 +109,22 @@ namespace taskManager.functions_class
         {
             db.users.Add(usr);
             db.SaveChanges();
+            MessageBox.Show("New user added successfully", "Done", MessageBoxButtons.OK
+                , MessageBoxIcon.Information);
         }
+
+        public static UserTable LoginUser(string usrName, string password)
+        {
+            var user = from usr in db.users
+                       where (usr.User_Name == usrName && usr.Password == password)
+                       select usr;
+
+            // Use SingleOrDefault to get a single user or null if none is found
+            UserTable foundUser = user.FirstOrDefault();
+           // MessageBox.Show($"{foundUser.Name} {foundUser.Password}");
+            return foundUser;
+        }
+
     }
 
 

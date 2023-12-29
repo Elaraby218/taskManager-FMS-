@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using taskManager.Data;
 using taskManager.functions_class;
 
 namespace taskManager
@@ -67,8 +68,35 @@ namespace taskManager
 
         private void clearallbtn_Click(object sender, EventArgs e)
         {
-            textBox1.Text = string.Empty; 
-            textBox2.Text = string.Empty; 
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+        }
+
+        private void loginbtn_Click(object sender, EventArgs e)
+        {
+            UserTable current_user = 
+                ManageDatabase.LoginUser(textBox2.Text, textBox1.Text);
+            if (current_user != null)
+            {
+                MessageBox.Show($"Wellcome {current_user.Name}", "Done",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                var res =MessageBox.Show("User Not Found ,Do you want to sign up ?", "Failed",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    this.Close();
+                    SignUp_Form frm = new SignUp_Form();
+                    Transition.FadeOut(frm);
+                    frm.Show();
+                    Transition.FadeIn(frm);
+                }
+                
+            }
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
         }
     }
 }
