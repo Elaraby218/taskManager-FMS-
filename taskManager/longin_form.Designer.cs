@@ -38,6 +38,7 @@
             exitbtn = new Button();
             clearallbtn = new Button();
             loginbtn = new Button();
+            ShowPassword = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -161,6 +162,20 @@
             loginbtn.UseVisualStyleBackColor = false;
             loginbtn.Click += loginbtn_Click;
             // 
+            // ShowPassword
+            // 
+            ShowPassword.AutoSize = true;
+            ShowPassword.BackColor = Color.Transparent;
+            ShowPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            ShowPassword.ForeColor = Color.White;
+            ShowPassword.Location = new Point(46, 459);
+            ShowPassword.Name = "ShowPassword";
+            ShowPassword.Size = new Size(112, 19);
+            ShowPassword.TabIndex = 13;
+            ShowPassword.Text = "Show Password";
+            ShowPassword.UseVisualStyleBackColor = false;
+            ShowPassword.CheckedChanged += ShowPassword_CheckedChanged;
+            // 
             // longin_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -169,6 +184,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(891, 696);
             ControlBox = false;
+            Controls.Add(ShowPassword);
             Controls.Add(panel1);
             Controls.Add(textBox2);
             Controls.Add(label4);
@@ -194,5 +210,6 @@
         private Button clearallbtn;
         private Button loginbtn;
         private PictureBox pictureBox1;
+        private CheckBox ShowPassword;
     }
 }

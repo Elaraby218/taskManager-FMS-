@@ -72,15 +72,24 @@ namespace taskManager
         {
             UserTable user = new UserTable();
             if (ValidationMethods.IsUserValid(Name_txtbox.Text, Email_txtbox.Text, Phone_txtbox.Text, Username_txtbox.Text
-                                              , Password_txtbox.Text, Conf_txtbox.Text))
+                                                    , Password_txtbox.Text, Conf_txtbox.Text))
             {
                 user.Name = Name_txtbox.Text;
                 user.Email = Email_txtbox.Text;
                 user.User_Name = Username_txtbox.Text;
                 user.Phone = Phone_txtbox.Text;
                 user.Password = Password_txtbox.Text;
-                // ManageDatabase.AddUser(user);
+                ManageDatabase.AddUser(user);
+                Name_txtbox.Text = "";
+                Email_txtbox.Text = "";
+                Phone_txtbox.Text = "";
+                Password_txtbox.Text = "";
+                Conf_txtbox.Text = "";
+                Username_txtbox.Text = "";
+                this.Close();
+                Manage.OpenForm(0);
             }
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

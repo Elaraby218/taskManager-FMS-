@@ -74,13 +74,13 @@ namespace taskManager
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-            if((!(ValidationMethods.IsValidName(textBox1.Text))) || (!(ValidationMethods.IsValidName(textBox2.Text))))
+            if (String.IsNullOrWhiteSpace(textBox2.Text) || String.IsNullOrWhiteSpace(textBox1.Text))
             {
                 MessageBox.Show("Please insert user name and password in correct way", "Error",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            UserTable current_user = 
+            UserTable current_user =
                 ManageDatabase.LoginUser(textBox2.Text, textBox1.Text);
             if (current_user != null)
             {
@@ -89,7 +89,7 @@ namespace taskManager
             }
             else
             {
-                var res =MessageBox.Show("User Not Found ,Do you want to sign up ?", "Failed",
+                var res = MessageBox.Show("User Not Found ,Do you want to sign up ?", "Failed",
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
@@ -99,10 +99,15 @@ namespace taskManager
                     frm.Show();
                     Transition.FadeIn(frm);
                 }
-                
+
             }
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
+        }
+
+        private void ShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.UseSystemPasswordChar = ShowPassword.Checked;
         }
     }
 }

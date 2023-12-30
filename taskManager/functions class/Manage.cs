@@ -19,6 +19,11 @@ namespace taskManager.functions_class
             return (ans == DialogResult.Yes);
         }
 
+        static public void EmptyMsgBox(string Message)
+        {
+            MessageBox.Show(Message, "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         static public void CustomizeButtonAppearance(Button button)
         {
             button.FlatStyle = FlatStyle.Flat;
