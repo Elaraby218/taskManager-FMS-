@@ -74,6 +74,12 @@ namespace taskManager
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
+            if((!(ValidationMethods.IsValidName(textBox1.Text))) || (!(ValidationMethods.IsValidName(textBox2.Text))))
+            {
+                MessageBox.Show("Please insert user name and password in correct way", "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             UserTable current_user = 
                 ManageDatabase.LoginUser(textBox2.Text, textBox1.Text);
             if (current_user != null)

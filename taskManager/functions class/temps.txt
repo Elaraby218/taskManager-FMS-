@@ -1,0 +1,33 @@
+ if (!ValidationMethods.IsValidName(Name_txtbox.Text))
+            {
+                MessageBox.Show("Please insert name in correct way", "Name Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Name_txtbox.Clear();
+            }
+            else if (!ValidationMethods.IsValidEmail(Email_txtbox.Text))
+            {
+                MessageBox.Show("Email form must be lik example@example.example", "Email Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Email_txtbox.Clear();
+            } 
+            else if(!ValidationMethods.IsValidPhone(Phone_txtbox.Text))
+            {
+                MessageBox.Show("phone number must be 11 Digit", "Phone number Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Phone_txtbox.Clear();
+            } 
+            else if(ValidationMethods.IsUserExist(Username_txtbox.Text))
+            {
+                MessageBox.Show("User name is in user please select another user name"
+                    , "User name Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Username_txtbox.Clear();
+            } 
+            else if (!ValidationMethods.IsValidPassword(Password_txtbox.Text , Conf_txtbox.Text))
+            {
+                MessageBox.Show("Please select Strong Password that must meet these conditons\n" +
+                    "At least 8 characters in length.\r\nContains at least one uppercase letter.\r\nContains at least one lowercase letter.\r\nContains at least one digit.\r\nContains at least one special character (e.g., !, @, #, $, %, ^, &)." 
+                   , "User name Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Username_txtbox.Clear();
+            }            

@@ -122,6 +122,7 @@
             // Login_btn
             // 
             Login_btn.BackColor = Color.MediumPurple;
+            Login_btn.Cursor = Cursors.Hand;
             Login_btn.FlatStyle = FlatStyle.Popup;
             Login_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             Login_btn.ForeColor = SystemColors.ButtonHighlight;
@@ -136,6 +137,7 @@
             // Signup_btn
             // 
             Signup_btn.BackColor = Color.MediumPurple;
+            Signup_btn.Cursor = Cursors.Hand;
             Signup_btn.FlatStyle = FlatStyle.Popup;
             Signup_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             Signup_btn.ForeColor = SystemColors.ButtonHighlight;
@@ -150,6 +152,7 @@
             // Exit_btn
             // 
             Exit_btn.BackColor = Color.MediumPurple;
+            Exit_btn.Cursor = Cursors.Hand;
             Exit_btn.FlatStyle = FlatStyle.Popup;
             Exit_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             Exit_btn.ForeColor = SystemColors.ButtonHighlight;
@@ -169,6 +172,7 @@
             button1.TabIndex = 5;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
+            button1.Visible = false;
             button1.Click += button1_Click;
             // 
             // Form1

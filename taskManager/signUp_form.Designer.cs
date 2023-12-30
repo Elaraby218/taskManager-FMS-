@@ -30,13 +30,13 @@
         {
             Exit_btn = new Button();
             panel1 = new Panel();
+            show_pass_chbox = new CheckBox();
             Conf_txtbox = new TextBox();
             Password_txtbox = new TextBox();
             Username_txtbox = new TextBox();
             Phone_txtbox = new TextBox();
             Email_txtbox = new TextBox();
             Name_txtbox = new TextBox();
-            checkBox1 = new CheckBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -53,6 +53,7 @@
             // Exit_btn
             // 
             Exit_btn.BackColor = Color.DarkSlateBlue;
+            Exit_btn.Cursor = Cursors.Hand;
             Exit_btn.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             Exit_btn.ForeColor = SystemColors.ButtonHighlight;
             Exit_btn.Location = new Point(539, 568);
@@ -66,13 +67,13 @@
             // panel1
             // 
             panel1.BackColor = Color.DarkSlateBlue;
+            panel1.Controls.Add(show_pass_chbox);
             panel1.Controls.Add(Conf_txtbox);
             panel1.Controls.Add(Password_txtbox);
             panel1.Controls.Add(Username_txtbox);
             panel1.Controls.Add(Phone_txtbox);
             panel1.Controls.Add(Email_txtbox);
             panel1.Controls.Add(Name_txtbox);
-            panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
@@ -83,6 +84,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(438, 727);
             panel1.TabIndex = 1;
+            // 
+            // show_pass_chbox
+            // 
+            show_pass_chbox.AutoSize = true;
+            show_pass_chbox.ForeColor = Color.Transparent;
+            show_pass_chbox.Location = new Point(73, 530);
+            show_pass_chbox.Name = "show_pass_chbox";
+            show_pass_chbox.Size = new Size(103, 19);
+            show_pass_chbox.TabIndex = 13;
+            show_pass_chbox.Text = "Show Pasword";
+            show_pass_chbox.UseVisualStyleBackColor = true;
+            show_pass_chbox.CheckedChanged += show_pass_chbox_CheckedChanged;
             // 
             // Conf_txtbox
             // 
@@ -133,6 +146,7 @@
             Phone_txtbox.Size = new Size(323, 40);
             Phone_txtbox.TabIndex = 9;
             Phone_txtbox.TextAlign = HorizontalAlignment.Center;
+            Phone_txtbox.KeyPress += Phone_txtbox_KeyPress;
             // 
             // Email_txtbox
             // 
@@ -157,18 +171,6 @@
             Name_txtbox.Size = new Size(323, 40);
             Name_txtbox.TabIndex = 7;
             Name_txtbox.TextAlign = HorizontalAlignment.Center;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.ForeColor = Color.Transparent;
-            checkBox1.Location = new Point(144, 668);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(155, 19);
-            checkBox1.TabIndex = 6;
-            checkBox1.Text = "I Accept All Terms of use";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // label6
             // 
@@ -249,6 +251,7 @@
             // SignUp_btn
             // 
             SignUp_btn.BackColor = Color.DarkSlateBlue;
+            SignUp_btn.Cursor = Cursors.Hand;
             SignUp_btn.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             SignUp_btn.ForeColor = SystemColors.ButtonHighlight;
             SignUp_btn.Location = new Point(539, 440);
@@ -262,6 +265,7 @@
             // Clearall_btn
             // 
             Clearall_btn.BackColor = Color.DarkSlateBlue;
+            Clearall_btn.Cursor = Cursors.Hand;
             Clearall_btn.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             Clearall_btn.ForeColor = SystemColors.ButtonHighlight;
             Clearall_btn.Location = new Point(539, 505);
@@ -304,7 +308,6 @@
         private Label label1;
         private Label label6;
         private Label label5;
-        private CheckBox checkBox1;
         private TextBox Conf_txtbox;
         private TextBox Password_txtbox;
         private TextBox Username_txtbox;
@@ -313,5 +316,6 @@
         private TextBox Name_txtbox;
         private Button SignUp_btn;
         private Button Clearall_btn;
+        private CheckBox show_pass_chbox;
     }
 }

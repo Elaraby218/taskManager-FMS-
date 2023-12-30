@@ -66,23 +66,48 @@ namespace taskManager
             Password_txtbox.Text = "";
             Conf_txtbox.Text = "";
             Username_txtbox.Text = "";
-            //
         }
 
         private void SignUp_btn_Click(object sender, EventArgs e)
         {
             UserTable user = new UserTable();
-            user.Email = Email_txtbox.Text;
-            user.Name = Name_txtbox.Text;
-            user.User_Name = Username_txtbox.Text;
-            user.Phone = Phone_txtbox.Text;   
-            user.Password = Password_txtbox.Text;
-            ManageDatabase.AddUser(user);
+            if (ValidationMethods.IsUserValid(Name_txtbox.Text, Email_txtbox.Text, Phone_txtbox.Text, Username_txtbox.Text
+                                              , Password_txtbox.Text, Conf_txtbox.Text))
+            {
+                user.Name = Name_txtbox.Text;
+                user.Email = Email_txtbox.Text;
+                user.User_Name = Username_txtbox.Text;
+                user.Phone = Phone_txtbox.Text;
+                user.Password = Password_txtbox.Text;
+                // ManageDatabase.AddUser(user);
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void show_pass_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            Password_txtbox.UseSystemPasswordChar = show_pass_chbox.Checked;
+            Conf_txtbox.UseSystemPasswordChar = show_pass_chbox.Checked;
+        }
+
+        private void Phone_txtbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\b')
+            {
+                return;
+            }
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (Phone_txtbox.Text.Length >= 11 && e.KeyChar != '\b') // '\b' is the Backspace character
+            {
+                e.Handled = true;
+            }
         }
     }
 }

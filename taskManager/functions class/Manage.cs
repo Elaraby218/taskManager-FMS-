@@ -106,7 +106,7 @@ namespace taskManager.functions_class
         }
 
         public static void AddUser(UserTable usr)
-        {
+        {          
             db.users.Add(usr);
             db.SaveChanges();
             MessageBox.Show("New user added successfully", "Done", MessageBoxButtons.OK
@@ -123,6 +123,15 @@ namespace taskManager.functions_class
             UserTable foundUser = user.FirstOrDefault();
            // MessageBox.Show($"{foundUser.Name} {foundUser.Password}");
             return foundUser;
+        }
+
+        public static bool IsUser(string username)
+        {
+            var user = from u in db.users
+                       where (u.User_Name == username)
+                       select u; 
+            UserTable founduser = user.FirstOrDefault();
+            return (founduser != null);
         }
 
     }
