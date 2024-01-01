@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using taskManager.Data;
@@ -137,6 +138,16 @@ namespace taskManager.functions_class
                        select u; 
             UserTable founduser = user.FirstOrDefault();
             return (founduser != null);
+        }
+
+        public static string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                // ComputeHash returns a byte array, convert it to a string representation
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
         }
 
     }

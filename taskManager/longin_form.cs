@@ -81,7 +81,7 @@ namespace taskManager
                 return;
             }
             UserTable current_user =
-                ManageDatabase.LoginUser(textBox2.Text, textBox1.Text);
+                ManageDatabase.LoginUser(textBox2.Text, ManageDatabase.HashPassword(textBox1.Text));
             if (current_user != null)
             {
                 MessageBox.Show($"Wellcome {current_user.Name}", "Done",
