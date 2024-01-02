@@ -109,5 +109,10 @@ namespace taskManager
         {
             textBox1.UseSystemPasswordChar = ShowPassword.Checked;
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

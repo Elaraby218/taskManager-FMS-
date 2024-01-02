@@ -54,6 +54,13 @@ namespace taskManager.Data
         [Column(TypeName = "int")]
         public int TaskId { get; set; }
 
+
+        [Required]
+        [Column(TypeName = "varchar(255)")]
+        [Display(Name = "Taks Title")]
+        public string Task_Title { get; set; }
+
+
         [Required]
         [Column(TypeName = "varchar(255)")]
         [Display(Name = "Taks Describtion")]
@@ -69,11 +76,27 @@ namespace taskManager.Data
         [Display(Name = "End Date")]
         public string Date_end { get; set; }
 
+        [Required]
+        [Column(TypeName = "varchar(255)")]
+        [Display(Name = "Time Needed")]
+        public string Time_Needed { get; set;}
+
+        [Required]
+        [Column(TypeName = "varchar(255)")]
+        [Display(Name = "Time Spent")]
+        public int Time_Spent { get; set; }
+
+        [Required]
+        [Column(TypeName = "varchar(255)")]
+        [Display(Name = "Priority")]
+        public int Priority { get; set; }
 
         [Required]
         [Column(TypeName = "bit")]
         [Display(Name = "Is task checked ?")]
         public bool Done { get; set; }
+
+
 
         [ForeignKey("UserTable")]
         [Column(TypeName = "int")]

@@ -156,3 +156,4 @@ J:\c#\taskmanger\taskManager\bin\Debug\net8.0-windows\runtimes\win-x86\native\Mi
 J:\c#\taskmanger\taskManager\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.csproj.AssemblyReference.cache
 J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.csproj.CopyComplete
+J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.Main_Page.resources

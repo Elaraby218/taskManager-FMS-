@@ -92,6 +92,7 @@
             textBox2.Size = new Size(286, 40);
             textBox2.TabIndex = 10;
             textBox2.TextAlign = HorizontalAlignment.Center;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // panel1
             // 
