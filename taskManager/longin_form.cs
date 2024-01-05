@@ -86,6 +86,9 @@ namespace taskManager
             {
                 MessageBox.Show($"Wellcome {current_user.Name}", "Done",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Main_Form mn = new Main_Form(current_user);
+                mn.ShowDialog();
+
             }
             else
             {

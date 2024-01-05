@@ -111,7 +111,7 @@
             Add_task_btn.Name = "Add_task_btn";
             Add_task_btn.Size = new Size(156, 39);
             Add_task_btn.TabIndex = 6;
-            Add_task_btn.Text = "Add Task";
+            Add_task_btn.Text = "Add Task_Table";
             Add_task_btn.UseVisualStyleBackColor = false;
             Add_task_btn.Click += Add_task_btn_Click;
             // 
@@ -130,11 +130,11 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label6.ForeColor = Color.Indigo;
-            label6.Location = new Point(17, 43);
+            label6.Location = new Point(6, 43);
             label6.Name = "label6";
-            label6.Size = new Size(156, 32);
+            label6.Size = new Size(226, 32);
             label6.TabIndex = 13;
-            label6.Text = "Task priority";
+            label6.Text = "Task_Table priority";
             // 
             // Priority
             // 
@@ -160,7 +160,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             label5.ForeColor = Color.Indigo;
-            label5.Location = new Point(14, 21);
+            label5.Location = new Point(6, 19);
             label5.Name = "label5";
             label5.Size = new Size(222, 25);
             label5.TabIndex = 12;
@@ -194,7 +194,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label4.ForeColor = Color.Indigo;
-            label4.Location = new Point(22, 17);
+            label4.Location = new Point(6, 17);
             label4.Name = "label4";
             label4.Size = new Size(41, 32);
             label4.TabIndex = 11;
@@ -223,7 +223,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label3.ForeColor = Color.Indigo;
-            label3.Location = new Point(16, 14);
+            label3.Location = new Point(6, 14);
             label3.Name = "label3";
             label3.Size = new Size(73, 32);
             label3.TabIndex = 10;
@@ -252,11 +252,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label2.ForeColor = Color.Indigo;
-            label2.Location = new Point(17, 59);
+            label2.Location = new Point(6, 60);
             label2.Name = "label2";
-            label2.Size = new Size(199, 32);
+            label2.Size = new Size(269, 32);
             label2.TabIndex = 9;
-            label2.Text = "Task description";
+            label2.Text = "Task_Table description";
             // 
             // TaskDesc_txtbx
             // 
@@ -286,11 +286,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label1.ForeColor = Color.Indigo;
-            label1.Location = new Point(12, 21);
+            label1.Location = new Point(6, 21);
             label1.Name = "label1";
-            label1.Size = new Size(120, 32);
+            label1.Size = new Size(190, 32);
             label1.TabIndex = 8;
-            label1.Text = "Task Title";
+            label1.Text = "Task_Table Title";
             // 
             // TaskTitle_txtbx
             // 

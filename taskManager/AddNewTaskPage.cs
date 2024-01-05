@@ -14,6 +14,7 @@ namespace taskManager
 {
     public partial class Main_Page : Form
     {
+        Form MAIN_FORM;
         public Main_Page()
         {
             InitializeComponent();
@@ -23,6 +24,18 @@ namespace taskManager
             Manage.CustomizeButtonAppearance(reset_btn);
             this.Paint += Main_Page_Paint;
         }
+
+        public Main_Page(Form MainForm)
+        {
+            InitializeComponent();
+            //   Manage.CustomizeButtonAppearance(Add_Task);
+            Manage.CustomizeButtonAppearance(Add_task_btn);
+            Manage.CustomizeButtonAppearance(reset_btn);
+            this.Paint += Main_Page_Paint;
+            MAIN_FORM = MainForm;
+        }
+
+
         private void Main_Page_Paint(object sender, PaintEventArgs e)
         {
             GraphicsPath path = new GraphicsPath();
@@ -49,7 +62,9 @@ namespace taskManager
 
         private void Add_task_btn_Click(object sender, EventArgs e)
         {
-
+            // add new task to database 
+            // add this task to the priority queue 
+            // list tasks in the panel after sort it based on priotity of the task 
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

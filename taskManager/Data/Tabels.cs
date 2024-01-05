@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace taskManager.Data
 {
@@ -45,7 +45,7 @@ namespace taskManager.Data
 
 
     [Table("Tasks")]
-    public record Task
+    public record Task_Table
     {
 
         [Key]
@@ -112,7 +112,7 @@ namespace taskManager.Data
         [Column(TypeName = "int")]
         public int HistoryId { get; set; }
 
-        [ForeignKey("Task")]
+        [ForeignKey("Task_Table")]
         [Column(TypeName ="int")]
         public int TaskId { get; set; }
 

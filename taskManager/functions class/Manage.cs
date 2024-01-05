@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Drawing2D;
-using System.Linq;
+﻿using System.Drawing.Drawing2D;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using taskManager.Data;
 
 
@@ -148,6 +144,13 @@ namespace taskManager.functions_class
                 byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
                 return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
+        }
+
+        public static int AddTask(Task_Table task)
+        {
+            db.tasks.Add(task);
+            db.SaveChanges();           
+            return 0;
         }
 
     }

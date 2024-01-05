@@ -28,177 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button12 = new Button();
-            button11 = new Button();
-            button10 = new Button();
-            button9 = new Button();
-            button8 = new Button();
-            button7 = new Button();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            flowLayoutPanel1.SuspendLayout();
+            Tasks_Not_started = new FlowLayoutPanel();
+            In_Progress_Tasks = new FlowLayoutPanel();
+            Completed_tasks = new FlowLayoutPanel();
+            Not_completed_tasks = new FlowLayoutPanel();
+            Add_Task_btn = new Button();
             SuspendLayout();
             // 
-            // button12
+            // Tasks_Not_started
             // 
-            button12.Location = new Point(84, 148);
-            button12.Name = "button12";
-            button12.Size = new Size(75, 23);
-            button12.TabIndex = 11;
-            button12.Text = "button12";
-            button12.UseVisualStyleBackColor = true;
+            Tasks_Not_started.AutoScroll = true;
+            Tasks_Not_started.BackColor = Color.Silver;
+            Tasks_Not_started.Location = new Point(148, 12);
+            Tasks_Not_started.Name = "Tasks_Not_started";
+            Tasks_Not_started.Size = new Size(444, 682);
+            Tasks_Not_started.TabIndex = 0;
             // 
-            // button11
+            // In_Progress_Tasks
             // 
-            button11.Location = new Point(3, 148);
-            button11.Name = "button11";
-            button11.Size = new Size(75, 23);
-            button11.TabIndex = 10;
-            button11.Text = "button11";
-            button11.UseVisualStyleBackColor = true;
+            In_Progress_Tasks.AutoScroll = true;
+            In_Progress_Tasks.BackColor = Color.Silver;
+            In_Progress_Tasks.Location = new Point(598, 12);
+            In_Progress_Tasks.Name = "In_Progress_Tasks";
+            In_Progress_Tasks.Size = new Size(444, 682);
+            In_Progress_Tasks.TabIndex = 1;
             // 
-            // button10
+            // Completed_tasks
             // 
-            button10.Location = new Point(84, 119);
-            button10.Name = "button10";
-            button10.Size = new Size(75, 23);
-            button10.TabIndex = 9;
-            button10.Text = "button10";
-            button10.UseVisualStyleBackColor = true;
+            Completed_tasks.AutoScroll = true;
+            Completed_tasks.BackColor = Color.Silver;
+            Completed_tasks.Location = new Point(1048, 12);
+            Completed_tasks.Name = "Completed_tasks";
+            Completed_tasks.Size = new Size(444, 364);
+            Completed_tasks.TabIndex = 2;
             // 
-            // button9
+            // Not_completed_tasks
             // 
-            button9.Location = new Point(3, 119);
-            button9.Name = "button9";
-            button9.Size = new Size(75, 23);
-            button9.TabIndex = 8;
-            button9.Text = "button9";
-            button9.UseVisualStyleBackColor = true;
+            Not_completed_tasks.AutoScroll = true;
+            Not_completed_tasks.BackColor = Color.Silver;
+            Not_completed_tasks.Location = new Point(1048, 382);
+            Not_completed_tasks.Name = "Not_completed_tasks";
+            Not_completed_tasks.Size = new Size(444, 312);
+            Not_completed_tasks.TabIndex = 3;
             // 
-            // button8
+            // Add_Task_btn
             // 
-            button8.Location = new Point(84, 90);
-            button8.Name = "button8";
-            button8.Size = new Size(75, 23);
-            button8.TabIndex = 7;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(3, 90);
-            button7.Name = "button7";
-            button7.Size = new Size(75, 23);
-            button7.TabIndex = 6;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(84, 61);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 5;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(3, 61);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 4;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(84, 32);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(3, 32);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(84, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(button1);
-            flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button3);
-            flowLayoutPanel1.Controls.Add(button4);
-            flowLayoutPanel1.Controls.Add(button5);
-            flowLayoutPanel1.Controls.Add(button6);
-            flowLayoutPanel1.Controls.Add(button7);
-            flowLayoutPanel1.Controls.Add(button8);
-            flowLayoutPanel1.Controls.Add(button9);
-            flowLayoutPanel1.Controls.Add(button10);
-            flowLayoutPanel1.Controls.Add(button11);
-            flowLayoutPanel1.Controls.Add(button12);
-            flowLayoutPanel1.Location = new Point(232, 127);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(185, 239);
-            flowLayoutPanel1.TabIndex = 0;
+            Add_Task_btn.FlatStyle = FlatStyle.Popup;
+            Add_Task_btn.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Add_Task_btn.Location = new Point(4, 274);
+            Add_Task_btn.Name = "Add_Task_btn";
+            Add_Task_btn.Size = new Size(138, 44);
+            Add_Task_btn.TabIndex = 4;
+            Add_Task_btn.Text = "New Task_Table";
+            Add_Task_btn.UseVisualStyleBackColor = true;
+            Add_Task_btn.Click += Add_Task_btn_Click;
             // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1397, 719);
-            Controls.Add(flowLayoutPanel1);
+            ClientSize = new Size(1505, 711);
+            Controls.Add(Add_Task_btn);
+            Controls.Add(Not_completed_tasks);
+            Controls.Add(Completed_tasks);
+            Controls.Add(In_Progress_Tasks);
+            Controls.Add(Tasks_Not_started);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Main_Form";
             Text = "Main_Form";
-            flowLayoutPanel1.ResumeLayout(false);
+            Load += Main_Form_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button12;
-        private Button button11;
-        private Button button10;
-        private Button button9;
-        private Button button8;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel Tasks_Not_started;
+        private FlowLayoutPanel In_Progress_Tasks;
+        private FlowLayoutPanel Completed_tasks;
+        private FlowLayoutPanel Not_completed_tasks;
+        private Button Add_Task_btn;
     }
 }

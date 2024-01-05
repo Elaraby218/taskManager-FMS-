@@ -158,3 +158,4 @@ J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.csproj.Assembl
 J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.csproj.CopyComplete
 J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.Main_Page.resources
 J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.Main_Form.resources
+J:\c#\taskmanger\taskManager\obj\Debug\net8.0-windows\taskManager.Task_Groub_box.resources
