@@ -43,6 +43,7 @@
             Tasks_Not_started.Name = "Tasks_Not_started";
             Tasks_Not_started.Size = new Size(444, 682);
             Tasks_Not_started.TabIndex = 0;
+            Tasks_Not_started.Paint += Tasks_Not_started_Paint;
             // 
             // In_Progress_Tasks
             // 
@@ -75,11 +76,11 @@
             // 
             Add_Task_btn.FlatStyle = FlatStyle.Popup;
             Add_Task_btn.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Add_Task_btn.Location = new Point(4, 274);
+            Add_Task_btn.Location = new Point(4, 280);
             Add_Task_btn.Name = "Add_Task_btn";
-            Add_Task_btn.Size = new Size(138, 44);
+            Add_Task_btn.Size = new Size(138, 49);
             Add_Task_btn.TabIndex = 4;
-            Add_Task_btn.Text = "New Task_Table";
+            Add_Task_btn.Text = "New Task";
             Add_Task_btn.UseVisualStyleBackColor = true;
             Add_Task_btn.Click += Add_Task_btn_Click;
             // 
@@ -102,10 +103,10 @@
 
         #endregion
 
-        private FlowLayoutPanel Tasks_Not_started;
-        private FlowLayoutPanel In_Progress_Tasks;
-        private FlowLayoutPanel Completed_tasks;
-        private FlowLayoutPanel Not_completed_tasks;
+        public FlowLayoutPanel Tasks_Not_started;
+        public FlowLayoutPanel In_Progress_Tasks;
+        public FlowLayoutPanel Completed_tasks;
+        public FlowLayoutPanel Not_completed_tasks;
         private Button Add_Task_btn;
     }
 }

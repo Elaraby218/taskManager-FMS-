@@ -154,7 +154,7 @@
             Task_ID_lbl.Name = "Task_ID_lbl";
             Task_ID_lbl.Size = new Size(82, 35);
             Task_ID_lbl.TabIndex = 2;
-            Task_ID_lbl.Text = "Task_Table ID :";
+            Task_ID_lbl.Text = "Task ID :";
             // 
             // Task_title_txtbox
             // 
@@ -175,7 +175,7 @@
             Task_Name_lbl.Name = "Task_Name_lbl";
             Task_Name_lbl.Size = new Size(99, 35);
             Task_Name_lbl.TabIndex = 0;
-            Task_Name_lbl.Text = "Task_Table Title :";
+            Task_Name_lbl.Text = "Task Title :";
             // 
             // Done_chkbx
             // 

@@ -108,7 +108,7 @@ namespace taskManager.functions_class
         }
 
         public static void AddUser(UserTable usr)
-        {          
+        {
             db.users.Add(usr);
             db.SaveChanges();
             MessageBox.Show("New user added successfully", "Done", MessageBoxButtons.OK
@@ -123,7 +123,7 @@ namespace taskManager.functions_class
 
             // Use SingleOrDefault to get a single user or null if none is found
             UserTable foundUser = user.FirstOrDefault();
-           // MessageBox.Show($"{foundUser.Name} {foundUser.Password}");
+            // MessageBox.Show($"{foundUser.Name} {foundUser.Password}");
             return foundUser;
         }
 
@@ -131,7 +131,7 @@ namespace taskManager.functions_class
         {
             var user = from u in db.users
                        where (u.User_Name == username)
-                       select u; 
+                       select u;
             UserTable founduser = user.FirstOrDefault();
             return (founduser != null);
         }
@@ -146,11 +146,65 @@ namespace taskManager.functions_class
             }
         }
 
-        public static int AddTask(Task_Table task)
+        public static Task_Table AddTask(Task_Table task)
         {
-            db.tasks.Add(task);
-            db.SaveChanges();           
-            return 0;
+            var addedtask = db.tasks.Add(task).Entity;
+            db.SaveChanges();
+            return addedtask;
+        }
+
+        public static void GetUserTasks(int id)
+        {
+            var tasks = from task in db.tasks where (task.UserId == id) select task;
+            ManageTasks.NotStartedTasks = tasks.ToList();
+        }
+
+    }
+
+    public static class ManageTasks
+    {
+        public static List<Task_Table> NotStartedTasks = new List<Task_Table>();
+        public static List<Task_Table> UserTaskView(Task_Table NewTask)
+        {
+            NotStartedTasks.Add(NewTask);
+            return NotStartedTasks;
+        }
+        public static List<Task_Table> SortTasks(List<Task_Table> TasksList)
+        {
+            NotStartedTasks.Sort(customSort);
+            return NotStartedTasks;
+        }
+
+        static Comparison<Task_Table> customSort = (task1, task2) =>
+        {
+
+            int dateComparison = task1.Date_start.CompareTo(task2.Date_start);
+
+
+            if (dateComparison == 0)
+            {
+                return task1.Priority.CompareTo(task2.Priority);
+            }
+
+            return dateComparison;
+        };
+
+        public static void ClearTaskView()
+        {
+            NotStartedTasks.Clear();
+        }
+
+        public static void ViewNotStartedTasks(Main_Form Frm1)
+        {
+            Frm1.Tasks_Not_started.Controls.Clear();
+            ManageTasks.SortTasks(NotStartedTasks);
+            foreach (var task in ManageTasks.NotStartedTasks)
+            {
+                Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
+                                                              task.Date_start.ToString(), task.Date_end.ToString());
+                Frm1.Tasks_Not_started.Controls.Add(t);
+            }
+            
         }
 
     }

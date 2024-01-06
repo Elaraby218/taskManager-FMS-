@@ -14,9 +14,12 @@ namespace taskManager
 {
     public partial class Main_Form : Form
     {
+        UserTable CurUser;
         public Main_Form(UserTable current_user)
         {
             InitializeComponent();
+            CurUser = current_user;
+            ManageTasks.ViewNotStartedTasks(this);
         }
 
         public Main_Form()
@@ -31,7 +34,13 @@ namespace taskManager
 
         private void Add_Task_btn_Click(object sender, EventArgs e)
         {
-            Main_Page mp = new Main_Page();
+            AddNewTaskForm ntp = new AddNewTaskForm(this, CurUser);
+            ntp.ShowDialog();
+        }
+
+        public void Tasks_Not_started_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -83,11 +83,6 @@ namespace taskManager.Data
 
         [Required]
         [Column(TypeName = "varchar(255)")]
-        [Display(Name = "Time Spent")]
-        public int Time_Spent { get; set; }
-
-        [Required]
-        [Column(TypeName = "varchar(255)")]
         [Display(Name = "Priority")]
         public int Priority { get; set; }
 

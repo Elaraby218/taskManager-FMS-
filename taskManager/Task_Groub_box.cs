@@ -12,17 +12,22 @@ namespace taskManager
 {
     public partial class Task_Groub_box : UserControl
     {
-        public string Task_Title { get; set; }
-        public string Task_Id { get; set; }
-        public string Task_From { get; set; }
-        public string Task_To { get; set; }
-        public Task_Groub_box()
+       
+        public Task_Groub_box(string Task_Title, string Task_Id, string Task_From, string Task_To)
         {
             InitializeComponent();
             Task_ID_txtbox.Text = Task_Id;
-            Task_title_txtbox.Text = Task_Id;
-            Start_txtbox.Text = Task_Id;
-            End_txtbox.Text = Task_Id;
+            Task_title_txtbox.Text = Task_Title;
+            Start_txtbox.Text = Task_From;
+            End_txtbox.Text = Task_To;
+        }
+        public Task_Groub_box()
+        {
+            InitializeComponent();
+            Task_ID_txtbox.Text = "NULL";
+            Task_title_txtbox.Text = "NULL";
+            Start_txtbox.Text = "NULL";
+            End_txtbox.Text = "NULL";
         }
         private void Task_title_txtbox_TextChanged(object sender, EventArgs e)
         {

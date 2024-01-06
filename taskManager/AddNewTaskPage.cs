@@ -9,23 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using taskManager.functions_class;
+using taskManager.Data;
 
 namespace taskManager
 {
-    public partial class Main_Page : Form
+    public partial class AddNewTaskForm : Form
     {
-        Form MAIN_FORM;
-        public Main_Page()
+        Main_Form MAIN_FORM;
+        UserTable CurUserr;
+        public AddNewTaskForm()
         {
             InitializeComponent();
-          
+
             //   Manage.CustomizeButtonAppearance(Add_Task);
             Manage.CustomizeButtonAppearance(Add_task_btn);
             Manage.CustomizeButtonAppearance(reset_btn);
             this.Paint += Main_Page_Paint;
         }
 
-        public Main_Page(Form MainForm)
+        public AddNewTaskForm(Main_Form MainForm, UserTable CurUser)
         {
             InitializeComponent();
             //   Manage.CustomizeButtonAppearance(Add_Task);
@@ -33,6 +35,7 @@ namespace taskManager
             Manage.CustomizeButtonAppearance(reset_btn);
             this.Paint += Main_Page_Paint;
             MAIN_FORM = MainForm;
+            CurUserr = CurUser;
         }
 
 
@@ -63,8 +66,24 @@ namespace taskManager
         private void Add_task_btn_Click(object sender, EventArgs e)
         {
             // add new task to database 
+            Task_Table newTask = new Task_Table();
+            Task_Table CurTask = new Task_Table();
+            newTask.Done = false;
+            newTask.Task_Title = TaskTitle_txtbx.Text;
+            newTask.Task_describtion = TaskDesc_txtbx.Text;
+            newTask.Date_start = From.Text.ToString();
+            newTask.Date_end = Date_end.Text.ToString();
+            newTask.Time_Needed = TimeInH_txtbx.Text;
+            newTask.Priority = Priority.Value;
+            newTask.UserId = CurUserr.UserId;
+            CurTask = ManageDatabase.AddTask(newTask);
+
             // add this task to the priority queue 
-            // list tasks in the panel after sort it based on priotity of the task 
+            ManageTasks.UserTaskView(CurTask);
+            ManageTasks.ViewNotStartedTasks(MAIN_FORM);
+            MessageBox.Show("Task added");
+            this.Close();
+            // list tasks in the panel after sort it based on Date of start then priotity of the task 
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -73,6 +92,11 @@ namespace taskManager
         }
 
         private void TaskTitle_txtbx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reset_btn_Click(object sender, EventArgs e)
         {
 
         }

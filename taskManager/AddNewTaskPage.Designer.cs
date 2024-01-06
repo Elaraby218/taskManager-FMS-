@@ -1,6 +1,6 @@
 ﻿namespace taskManager
 {
-    partial class Main_Page
+    partial class AddNewTaskForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             TimeInH_txtbx = new TextBox();
             groupBox4 = new GroupBox();
             label4 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            Date_end = new DateTimePicker();
             groupBox3 = new GroupBox();
             label3 = new Label();
             From = new DateTimePicker();
@@ -100,6 +100,7 @@
             reset_btn.TabIndex = 7;
             reset_btn.Text = "Reset Data";
             reset_btn.UseVisualStyleBackColor = false;
+            reset_btn.Click += reset_btn_Click;
             // 
             // Add_task_btn
             // 
@@ -111,7 +112,7 @@
             Add_task_btn.Name = "Add_task_btn";
             Add_task_btn.Size = new Size(156, 39);
             Add_task_btn.TabIndex = 6;
-            Add_task_btn.Text = "Add Task_Table";
+            Add_task_btn.Text = "Add Task";
             Add_task_btn.UseVisualStyleBackColor = false;
             Add_task_btn.Click += Add_task_btn_Click;
             // 
@@ -132,9 +133,9 @@
             label6.ForeColor = Color.Indigo;
             label6.Location = new Point(6, 43);
             label6.Name = "label6";
-            label6.Size = new Size(226, 32);
+            label6.Size = new Size(156, 32);
             label6.TabIndex = 13;
-            label6.Text = "Task_Table priority";
+            label6.Text = "Task priority";
             // 
             // Priority
             // 
@@ -182,7 +183,7 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(label4);
-            groupBox4.Controls.Add(dateTimePicker1);
+            groupBox4.Controls.Add(Date_end);
             groupBox4.Location = new Point(35, 306);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(609, 52);
@@ -200,13 +201,13 @@
             label4.TabIndex = 11;
             label4.Text = "To";
             // 
-            // dateTimePicker1
+            // Date_end
             // 
-            dateTimePicker1.Cursor = Cursors.Hand;
-            dateTimePicker1.Location = new Point(277, 22);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(318, 23);
-            dateTimePicker1.TabIndex = 3;
+            Date_end.Cursor = Cursors.Hand;
+            Date_end.Location = new Point(277, 22);
+            Date_end.Name = "Date_end";
+            Date_end.Size = new Size(318, 23);
+            Date_end.TabIndex = 3;
             // 
             // groupBox3
             // 
@@ -254,9 +255,9 @@
             label2.ForeColor = Color.Indigo;
             label2.Location = new Point(6, 60);
             label2.Name = "label2";
-            label2.Size = new Size(269, 32);
+            label2.Size = new Size(199, 32);
             label2.TabIndex = 9;
-            label2.Text = "Task_Table description";
+            label2.Text = "Task description";
             // 
             // TaskDesc_txtbx
             // 
@@ -286,11 +287,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label1.ForeColor = Color.Indigo;
-            label1.Location = new Point(6, 21);
+            label1.Location = new Point(6, 14);
             label1.Name = "label1";
-            label1.Size = new Size(190, 32);
+            label1.Size = new Size(120, 32);
             label1.TabIndex = 8;
-            label1.Text = "Task_Table Title";
+            label1.Text = "Task Title";
             // 
             // TaskTitle_txtbx
             // 
@@ -306,7 +307,7 @@
             TaskTitle_txtbx.TextAlign = HorizontalAlignment.Center;
             TaskTitle_txtbx.TextChanged += TaskTitle_txtbx_TextChanged;
             // 
-            // Main_Page
+            // AddNewTaskForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -314,7 +315,7 @@
             ClientSize = new Size(713, 643);
             Controls.Add(AddNewTask_pnl);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Main_Page";
+            Name = "AddNewTaskForm";
             Text = "Main Page";
             AddNewTask_pnl.ResumeLayout(false);
             groupBox7.ResumeLayout(false);
@@ -339,7 +340,7 @@
         private TextBox TaskTitle_txtbx;
         private TextBox TaskDesc_txtbx;
         private TextBox TimeInH_txtbx;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker Date_end;
         private DateTimePicker From;
         private TrackBar Priority;
         private Button Add_task_btn;
