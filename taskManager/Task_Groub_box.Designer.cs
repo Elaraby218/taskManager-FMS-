@@ -217,6 +217,6 @@
         private Label From_lbl;
         private Button More_btn;
         private Button Delete_btn;
-        private CheckBox Done_chkbx;
+        public CheckBox Done_chkbx;
     }
 }

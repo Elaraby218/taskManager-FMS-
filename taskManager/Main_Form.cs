@@ -42,5 +42,14 @@ namespace taskManager
         {
 
         }
+
+        private void Logout_btn_Click(object sender, EventArgs e)
+        {
+
+
+
+
+            this.Close();
+        }
     }
 }

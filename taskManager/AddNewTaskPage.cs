@@ -77,7 +77,6 @@ namespace taskManager
             newTask.Priority = Priority.Value;
             newTask.UserId = CurUserr.UserId;
             CurTask = ManageDatabase.AddTask(newTask);
-
             // add this task to the priority queue 
             ManageTasks.UserTaskView(CurTask);
             ManageTasks.ViewNotStartedTasks(MAIN_FORM);

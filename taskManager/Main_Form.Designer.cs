@@ -33,6 +33,7 @@
             Completed_tasks = new FlowLayoutPanel();
             Not_completed_tasks = new FlowLayoutPanel();
             Add_Task_btn = new Button();
+            Logout_btn = new Button();
             SuspendLayout();
             // 
             // Tasks_Not_started
@@ -84,11 +85,24 @@
             Add_Task_btn.UseVisualStyleBackColor = true;
             Add_Task_btn.Click += Add_Task_btn_Click;
             // 
+            // Logout_btn
+            // 
+            Logout_btn.FlatStyle = FlatStyle.Popup;
+            Logout_btn.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Logout_btn.Location = new Point(4, 351);
+            Logout_btn.Name = "Logout_btn";
+            Logout_btn.Size = new Size(138, 49);
+            Logout_btn.TabIndex = 5;
+            Logout_btn.Text = "Log Out";
+            Logout_btn.UseVisualStyleBackColor = true;
+            Logout_btn.Click += Logout_btn_Click;
+            // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1505, 711);
+            Controls.Add(Logout_btn);
             Controls.Add(Add_Task_btn);
             Controls.Add(Not_completed_tasks);
             Controls.Add(Completed_tasks);
@@ -108,5 +122,6 @@
         public FlowLayoutPanel Completed_tasks;
         public FlowLayoutPanel Not_completed_tasks;
         private Button Add_Task_btn;
+        private Button Logout_btn;
     }
 }

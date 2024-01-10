@@ -87,13 +87,6 @@ namespace taskManager
                 MessageBox.Show($"Wellcome {current_user.Name}", "Done",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ManageDatabase.GetUserTasks(current_user.UserId);
-                string str = "";
-                foreach(var t in ManageTasks.NotStartedTasks)
-                {
-                    str += t.Date_start;
-                    str += '\n';
-                }
-                MessageBox.Show(str);
                 Main_Form mn = new Main_Form(current_user);
                 mn.ShowDialog();
 

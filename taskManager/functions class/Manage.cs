@@ -156,14 +156,57 @@ namespace taskManager.functions_class
         public static void GetUserTasks(int id)
         {
             var tasks = from task in db.tasks where (task.UserId == id) select task;
-            ManageTasks.NotStartedTasks = tasks.ToList();
+            ManageTasks.AllTasks = tasks.ToList();
+            DateTime currentDate1 = DateTime.Now;
+            string currentDate = currentDate1.ToString("dd MMMM yyyy");
+
+            foreach (var task in ManageTasks.AllTasks)
+            {
+                string TaskStartDate = task.Date_start;
+                int comp = TaskStartDate.CompareTo(currentDate);
+                if (comp>0)
+                {
+                    ManageTasks.NotStartedTasks.Add(task);
+                }
+                else
+                {
+                    string TaskEndtDate = task.Date_end;
+                    comp = TaskEndtDate.CompareTo(currentDate);
+                    if (comp>=0)
+                    {
+                        if (task.Done == true)
+                        {
+                            ManageTasks.CompletedTasks.Add(task);
+                        }
+                        else
+                        {
+                            ManageTasks.InProgressTasks.Add(task);
+                        }
+                    }
+                    else
+                    {
+                        ManageTasks.NotCompletedTasks.Add(task);
+                    }
+                }
+            }
+
+            //string notstarted = string.Join(", ", ManageTasks.NotStartedTasks);
+            //string notstarted1 = string.Join(", ", ManageTasks.InProgressTasks);
+            //string notstarted2 = string.Join(", ", ManageTasks.CompletedTasks);
+            //string notstarted3 = string.Join(", ", ManageTasks.NotCompletedTasks);
+            //MessageBox.Show($"{currentDate} \n {notstarted} \n {notstarted1} \n {notstarted2} \n {notstarted3}");
+
         }
 
     }
 
     public static class ManageTasks
     {
+        public static List<Task_Table> AllTasks = new List<Task_Table>();
         public static List<Task_Table> NotStartedTasks = new List<Task_Table>();
+        public static List<Task_Table> InProgressTasks = new List<Task_Table>();
+        public static List<Task_Table> CompletedTasks = new List<Task_Table>();
+        public static List<Task_Table> NotCompletedTasks = new List<Task_Table>();
         public static List<Task_Table> UserTaskView(Task_Table NewTask)
         {
             NotStartedTasks.Add(NewTask);
@@ -192,6 +235,10 @@ namespace taskManager.functions_class
         public static void ClearTaskView()
         {
             NotStartedTasks.Clear();
+            AllTasks.Clear();
+            InProgressTasks.Clear();
+            CompletedTasks.Clear();
+            NotCompletedTasks.Clear();
         }
 
         public static void ViewNotStartedTasks(Main_Form Frm1)
@@ -204,7 +251,28 @@ namespace taskManager.functions_class
                                                               task.Date_start.ToString(), task.Date_end.ToString());
                 Frm1.Tasks_Not_started.Controls.Add(t);
             }
-            
+
+            foreach (var task in ManageTasks.InProgressTasks)
+            {
+                Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
+                                                              task.Date_start.ToString(), task.Date_end.ToString());
+                t.Done_chkbx.Visible = true;
+                Frm1.In_Progress_Tasks.Controls.Add(t);
+            }
+
+            foreach (var task in ManageTasks.CompletedTasks) { 
+                Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
+                                                              task.Date_start.ToString(), task.Date_end.ToString());
+                Frm1.Completed_tasks.Controls.Add(t);
+            }
+
+            foreach (var task in ManageTasks.NotCompletedTasks)
+            {
+                Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
+                                                              task.Date_start.ToString(), task.Date_end.ToString());
+                Frm1.Not_completed_tasks.Controls.Add(t);
+            }
+
         }
 
     }
