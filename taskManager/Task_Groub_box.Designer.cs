@@ -187,12 +187,12 @@
             Done_chkbx.TabIndex = 11;
             Done_chkbx.Text = "Mark as done";
             Done_chkbx.UseVisualStyleBackColor = true;
-            Done_chkbx.Visible = false;
             // 
             // Task_Groub_box
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             Controls.Add(Done_chkbx);
             Controls.Add(Task_gbx);
             Name = "Task_Groub_box";
