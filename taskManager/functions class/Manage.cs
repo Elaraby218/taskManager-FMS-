@@ -155,8 +155,10 @@ namespace taskManager.functions_class
 
         public static void GetUserTasks(int id)
         {
+            ManageTasks.ClearTaskView();
             var tasks = from task in db.tasks where (task.UserId == id) select task;
             ManageTasks.AllTasks = tasks.ToList();
+            ManageTasks.SortTasks(ManageTasks.AllTasks);
             DateTime currentDate1 = DateTime.Now;
             string currentDate = currentDate1.ToString("dd MMMM yyyy");
 
@@ -214,8 +216,8 @@ namespace taskManager.functions_class
         }
         public static List<Task_Table> SortTasks(List<Task_Table> TasksList)
         {
-            NotStartedTasks.Sort(customSort);
-            return NotStartedTasks;
+            AllTasks.Sort(customSort);
+            return AllTasks;
         }
 
         static Comparison<Task_Table> customSort = (task1, task2) =>
@@ -234,17 +236,20 @@ namespace taskManager.functions_class
 
         public static void ClearTaskView()
         {
-            NotStartedTasks.Clear();
             AllTasks.Clear();
+            NotStartedTasks.Clear();
             InProgressTasks.Clear();
             CompletedTasks.Clear();
             NotCompletedTasks.Clear();
         }
 
-        public static void ViewNotStartedTasks(Main_Form Frm1)
+        public static void ViewTasks(Main_Form Frm1)
         {
             Frm1.Tasks_Not_started.Controls.Clear();
-            ManageTasks.SortTasks(NotStartedTasks);
+            Frm1.In_Progress_Tasks.Controls.Clear();
+            Frm1.Completed_tasks.Controls.Clear();
+            Frm1.Not_completed_tasks.Controls.Clear();
+           
             foreach (var task in ManageTasks.NotStartedTasks)
             {
                 Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),

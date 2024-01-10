@@ -19,7 +19,7 @@ namespace taskManager
         {
             InitializeComponent();
             CurUser = current_user;
-            ManageTasks.ViewNotStartedTasks(this);
+            ManageTasks.ViewTasks(this);
         }
 
         public Main_Form()
@@ -48,7 +48,7 @@ namespace taskManager
 
 
 
-
+            ManageTasks.ClearTaskView();
             this.Close();
         }
     }

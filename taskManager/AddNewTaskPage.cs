@@ -78,8 +78,10 @@ namespace taskManager
             newTask.UserId = CurUserr.UserId;
             CurTask = ManageDatabase.AddTask(newTask);
             // add this task to the priority queue 
-            ManageTasks.UserTaskView(CurTask);
-            ManageTasks.ViewNotStartedTasks(MAIN_FORM);
+            // ManageTasks.UserTaskView(CurTask);
+            
+            ManageDatabase.GetUserTasks(CurUserr.UserId);
+            ManageTasks.ViewTasks(MAIN_FORM);
             MessageBox.Show("Task added");
             this.Close();
             // list tasks in the panel after sort it based on Date of start then priotity of the task 
