@@ -200,6 +200,29 @@ namespace taskManager.functions_class
 
         }
 
+        public static Task_Table GetTask(int Taskid)
+        {
+            var task = from t in db.tasks
+                              where (t.TaskId == Taskid)
+                              select t;
+            Task_Table retTask = task.FirstOrDefault();
+            return retTask;
+        }
+
+        public static void EditTask(Task_Table curtask)
+        {
+
+            var task = db.tasks.FirstOrDefault(t=>t.TaskId == curtask.TaskId);
+            task.Task_Title = curtask.Task_Title;
+            task.Task_describtion = curtask.Task_describtion;
+            task.Date_start = curtask.Date_start;
+            task.Date_end = curtask.Date_end;
+            task.Done = curtask.Done;
+            task.Time_Needed = curtask.Time_Needed;
+            task.Done = curtask.Done;
+            db.SaveChanges();    
+        }
+
     }
 
     public static class ManageTasks

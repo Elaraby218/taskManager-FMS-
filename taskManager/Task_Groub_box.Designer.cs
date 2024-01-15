@@ -65,6 +65,8 @@
             // 
             // More_btn
             // 
+            More_btn.BackColor = Color.White;
+            More_btn.FlatStyle = FlatStyle.Popup;
             More_btn.Font = new Font("Reem Kufi Fun SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             More_btn.Location = new Point(254, 214);
             More_btn.Name = "More_btn";
@@ -72,10 +74,12 @@
             More_btn.TabIndex = 10;
             More_btn.Text = "More";
             More_btn.TextAlign = ContentAlignment.TopCenter;
-            More_btn.UseVisualStyleBackColor = true;
+            More_btn.UseVisualStyleBackColor = false;
             // 
             // Delete_btn
             // 
+            Delete_btn.BackColor = Color.White;
+            Delete_btn.FlatStyle = FlatStyle.Popup;
             Delete_btn.Font = new Font("Reem Kufi Fun SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Delete_btn.Location = new Point(144, 214);
             Delete_btn.Name = "Delete_btn";
@@ -83,10 +87,12 @@
             Delete_btn.TabIndex = 9;
             Delete_btn.Text = "Delete";
             Delete_btn.TextAlign = ContentAlignment.TopCenter;
-            Delete_btn.UseVisualStyleBackColor = true;
+            Delete_btn.UseVisualStyleBackColor = false;
             // 
             // Edit_btn
             // 
+            Edit_btn.BackColor = Color.White;
+            Edit_btn.FlatStyle = FlatStyle.Popup;
             Edit_btn.Font = new Font("Reem Kufi Fun SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Edit_btn.Location = new Point(34, 214);
             Edit_btn.Name = "Edit_btn";
@@ -94,7 +100,8 @@
             Edit_btn.TabIndex = 8;
             Edit_btn.Text = "Edit";
             Edit_btn.TextAlign = ContentAlignment.TopCenter;
-            Edit_btn.UseVisualStyleBackColor = true;
+            Edit_btn.UseVisualStyleBackColor = false;
+            Edit_btn.Click += Edit_btn_Click;
             // 
             // End_txtbox
             // 

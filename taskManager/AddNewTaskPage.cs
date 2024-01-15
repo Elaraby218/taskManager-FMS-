@@ -15,8 +15,9 @@ namespace taskManager
 {
     public partial class AddNewTaskForm : Form
     {
-        Main_Form MAIN_FORM;
-        UserTable CurUserr;
+        static Main_Form MAIN_FORM;
+        static UserTable CurUserr;
+        static Task_Table CurTask;
         public AddNewTaskForm()
         {
             InitializeComponent();
@@ -36,6 +37,19 @@ namespace taskManager
             this.Paint += Main_Page_Paint;
             MAIN_FORM = MainForm;
             CurUserr = CurUser;
+        }
+        public static void initizeVluse(Main_Form mani_Form, UserTable CUser)
+        {
+            MAIN_FORM = mani_Form;
+            CurUserr = CUser;
+        }
+        public AddNewTaskForm(Task_Table task)
+        {
+            InitializeComponent();
+            //   Manage.CustomizeButtonAppearance(Add_Task);
+            Manage.CustomizeButtonAppearance(Add_task_btn);
+            Manage.CustomizeButtonAppearance(reset_btn);
+            CurTask = task;
         }
 
 
@@ -79,7 +93,7 @@ namespace taskManager
             CurTask = ManageDatabase.AddTask(newTask);
             // add this task to the priority queue 
             // ManageTasks.UserTaskView(CurTask);
-            
+
             ManageDatabase.GetUserTasks(CurUserr.UserId);
             ManageTasks.ViewTasks(MAIN_FORM);
             MessageBox.Show("Task added");
@@ -100,6 +114,27 @@ namespace taskManager
         private void reset_btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Save_changes_btn_Click(object sender, EventArgs e)
+        {
+           
+            CurTask.Task_Title = this.TaskTitle_txtbx.Text;
+            CurTask.Task_describtion = this.TaskDesc_txtbx.Text;
+            CurTask.Time_Needed = this.TimeInH_txtbx.Text;
+            CurTask.Priority = this.Priority.Value;
+            CurTask.Date_start = this.From.Text.ToString();
+            CurTask.Date_end   = this.Date_end.Text.ToString();
+            ManageDatabase.EditTask(CurTask);
+            MessageBox.Show($"Done successfully , thsk id is {CurTask.TaskId}");
+            ManageDatabase.GetUserTasks(CurUserr.UserId);
+            ManageTasks.ViewTasks(MAIN_FORM);
+            this.Close();
+        }
+
+        private void Dicard_changes_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

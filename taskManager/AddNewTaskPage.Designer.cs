@@ -30,6 +30,8 @@
         {
             AddNewTask_pnl = new Panel();
             groupBox7 = new GroupBox();
+            Dicard_changes_btn = new Button();
+            Save_changes_btn = new Button();
             reset_btn = new Button();
             Add_task_btn = new Button();
             groupBox6 = new GroupBox();
@@ -80,6 +82,8 @@
             // 
             // groupBox7
             // 
+            groupBox7.Controls.Add(Dicard_changes_btn);
+            groupBox7.Controls.Add(Save_changes_btn);
             groupBox7.Controls.Add(reset_btn);
             groupBox7.Controls.Add(Add_task_btn);
             groupBox7.Location = new Point(171, 528);
@@ -87,6 +91,34 @@
             groupBox7.Size = new Size(353, 61);
             groupBox7.TabIndex = 20;
             groupBox7.TabStop = false;
+            // 
+            // Dicard_changes_btn
+            // 
+            Dicard_changes_btn.BackColor = Color.Indigo;
+            Dicard_changes_btn.FlatStyle = FlatStyle.Popup;
+            Dicard_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Dicard_changes_btn.ForeColor = Color.White;
+            Dicard_changes_btn.Location = new Point(189, 15);
+            Dicard_changes_btn.Name = "Dicard_changes_btn";
+            Dicard_changes_btn.Size = new Size(156, 39);
+            Dicard_changes_btn.TabIndex = 22;
+            Dicard_changes_btn.Text = "Discard";
+            Dicard_changes_btn.UseVisualStyleBackColor = false;
+            Dicard_changes_btn.Click += Dicard_changes_btn_Click;
+            // 
+            // Save_changes_btn
+            // 
+            Save_changes_btn.BackColor = Color.Indigo;
+            Save_changes_btn.FlatStyle = FlatStyle.Popup;
+            Save_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Save_changes_btn.ForeColor = Color.White;
+            Save_changes_btn.Location = new Point(6, 15);
+            Save_changes_btn.Name = "Save_changes_btn";
+            Save_changes_btn.Size = new Size(156, 39);
+            Save_changes_btn.TabIndex = 21;
+            Save_changes_btn.Text = "Save";
+            Save_changes_btn.UseVisualStyleBackColor = false;
+            Save_changes_btn.Click += Save_changes_btn_Click;
             // 
             // reset_btn
             // 
@@ -336,15 +368,15 @@
         }
 
         #endregion
-        private Panel AddNewTask_pnl;
-        private TextBox TaskTitle_txtbx;
-        private TextBox TaskDesc_txtbx;
-        private TextBox TimeInH_txtbx;
-        private DateTimePicker Date_end;
-        private DateTimePicker From;
-        private TrackBar Priority;
-        private Button Add_task_btn;
-        private Button reset_btn;
+        public Panel AddNewTask_pnl;
+        public TextBox TaskTitle_txtbx;
+        public TextBox TaskDesc_txtbx;
+        public TextBox TimeInH_txtbx;
+        public DateTimePicker Date_end;
+        public DateTimePicker From;
+        public TrackBar Priority;
+        public Button Add_task_btn;
+        public Button reset_btn;
         private Label label3;
         private Label label2;
         private Label label1;
@@ -358,5 +390,7 @@
         private GroupBox groupBox3;
         private GroupBox groupBox2;
         private GroupBox groupBox7;
+        public Button Dicard_changes_btn;
+        public Button Save_changes_btn;
     }
 }

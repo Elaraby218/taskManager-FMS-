@@ -20,6 +20,8 @@ namespace taskManager
             InitializeComponent();
             CurUser = current_user;
             ManageTasks.ViewTasks(this);
+            AddNewTaskForm.initizeVluse(this, current_user);
+
         }
 
         public Main_Form()
@@ -35,6 +37,12 @@ namespace taskManager
         private void Add_Task_btn_Click(object sender, EventArgs e)
         {
             AddNewTaskForm ntp = new AddNewTaskForm(this, CurUser);
+            ntp.Save_changes_btn.Enabled = false;
+            ntp.Dicard_changes_btn.Enabled = false;
+            ntp.Dicard_changes_btn.Hide();
+            ntp.Save_changes_btn.Hide();
+            ntp.Add_task_btn.Enabled = true;
+            ntp.reset_btn.Enabled = true;
             ntp.ShowDialog();
         }
 
