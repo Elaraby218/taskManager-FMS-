@@ -88,7 +88,9 @@ namespace taskManager
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ManageDatabase.GetUserTasks(current_user.UserId);
                 Main_Form mn = new Main_Form(current_user);
-               
+                ManageSharedValues.CurrentUserId = current_user.UserId;
+                ManageSharedValues.EssintionaForm = mn;
+                mn.user_name_lbl.Text = current_user.Name;
                 mn.ShowDialog();
 
             }

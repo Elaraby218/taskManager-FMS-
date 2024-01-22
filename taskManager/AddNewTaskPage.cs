@@ -114,17 +114,21 @@ namespace taskManager
         private void reset_btn_Click(object sender, EventArgs e)
         {
 
+            this.TaskTitle_txtbx.Text = "";
+            this.TaskDesc_txtbx.Text = "";
+            this.TimeInH_txtbx.Text = "";
+            this.Priority.Value = 0;
         }
 
         private void Save_changes_btn_Click(object sender, EventArgs e)
         {
-           
+
             CurTask.Task_Title = this.TaskTitle_txtbx.Text;
             CurTask.Task_describtion = this.TaskDesc_txtbx.Text;
             CurTask.Time_Needed = this.TimeInH_txtbx.Text;
             CurTask.Priority = this.Priority.Value;
             CurTask.Date_start = this.From.Text.ToString();
-            CurTask.Date_end   = this.Date_end.Text.ToString();
+            CurTask.Date_end = this.Date_end.Text.ToString();
             ManageDatabase.EditTask(CurTask);
             MessageBox.Show($"Done successfully , thsk id is {CurTask.TaskId}");
             ManageDatabase.GetUserTasks(CurUserr.UserId);
@@ -133,6 +137,11 @@ namespace taskManager
         }
 
         private void Dicard_changes_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }

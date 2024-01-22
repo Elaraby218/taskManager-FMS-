@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,12 +40,12 @@ namespace taskManager
         private void Edit_btn_Click(object sender, EventArgs e)
         {
             Task_Table curtask = ManageDatabase.GetTask(int.Parse(this.Task_ID_txtbox.Text));
-            AddNewTaskForm newform  = new AddNewTaskForm(curtask);
-            newform.TaskTitle_txtbx.Text = curtask.Task_Title; 
-            newform.TaskDesc_txtbx.Text = curtask.Task_describtion; 
-            newform.TimeInH_txtbx.Text = curtask.Time_Needed; 
-            newform.Date_end.Text = curtask.Date_end; 
-            newform.From.Text = curtask.Date_start; 
+            AddNewTaskForm newform = new AddNewTaskForm(curtask);
+            newform.TaskTitle_txtbx.Text = curtask.Task_Title;
+            newform.TaskDesc_txtbx.Text = curtask.Task_describtion;
+            newform.TimeInH_txtbx.Text = curtask.Time_Needed;
+            newform.Date_end.Text = curtask.Date_end;
+            newform.From.Text = curtask.Date_start;
             newform.Priority.Value = curtask.Priority;
             newform.Add_task_btn.Enabled = false;
             newform.Add_task_btn.Hide();
@@ -52,7 +53,45 @@ namespace taskManager
             newform.reset_btn.Hide();
             newform.ShowDialog();
 
-            
+
+        }
+
+        private void More_btn_Click(object sender, EventArgs e)
+        {
+            Task_Table curtask = ManageDatabase.GetTask(int.Parse(this.Task_ID_txtbox.Text));
+            AddNewTaskForm newform = new AddNewTaskForm(curtask);
+            newform.TaskTitle_txtbx.Text = curtask.Task_Title;
+            newform.TaskTitle_txtbx.ReadOnly = true;
+            newform.TaskDesc_txtbx.Text = curtask.Task_describtion;
+            newform.TaskDesc_txtbx.ReadOnly = true;
+            newform.TimeInH_txtbx.Text = curtask.Time_Needed;
+            newform.TimeInH_txtbx.ReadOnly = true;
+            newform.Date_end.Text = curtask.Date_end;
+            newform.From.Text = curtask.Date_start;
+            newform.Priority.Value = curtask.Priority;
+            newform.Add_task_btn.Enabled = false;
+            newform.Add_task_btn.Hide();
+            newform.reset_btn.Enabled = false;
+            newform.reset_btn.Hide();
+            newform.Save_changes_btn.Enabled = false;
+            newform.Save_changes_btn.Hide();
+            newform.Dicard_changes_btn.Enabled = false;
+            newform.Dicard_changes_btn.Hide();
+
+            newform.ShowDialog();
+        }
+
+        private void Delete_btn_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Are you sure, this task will be deleted permenently", "Delete Task",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                ManageDatabase.DeleteTask(int.Parse(this.Task_ID_txtbox.Text));
+                ManageDatabase.GetUserTasks(ManageSharedValues.CurrentUserId);
+                ManageTasks.ViewTasks(ManageSharedValues.EssintionaForm);
+            }
+
         }
     }
 }

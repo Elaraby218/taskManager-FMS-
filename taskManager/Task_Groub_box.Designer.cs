@@ -75,6 +75,7 @@
             More_btn.Text = "More";
             More_btn.TextAlign = ContentAlignment.TopCenter;
             More_btn.UseVisualStyleBackColor = false;
+            More_btn.Click += More_btn_Click;
             // 
             // Delete_btn
             // 
@@ -88,6 +89,7 @@
             Delete_btn.Text = "Delete";
             Delete_btn.TextAlign = ContentAlignment.TopCenter;
             Delete_btn.UseVisualStyleBackColor = false;
+            Delete_btn.Click += Delete_btn_Click;
             // 
             // Edit_btn
             // 
@@ -203,7 +205,7 @@
             Controls.Add(Done_chkbx);
             Controls.Add(Task_gbx);
             Name = "Task_Groub_box";
-            Size = new Size(417, 289);
+            Size = new Size(417, 292);
             Task_gbx.ResumeLayout(false);
             Task_gbx.PerformLayout();
             ResumeLayout(false);
@@ -214,16 +216,16 @@
 
         private GroupBox Task_gbx;
         private Label Task_Name_lbl;
-        private TextBox Task_ID_txtbox;
+        public TextBox Task_ID_txtbox;
         private Label Task_ID_lbl;
         private TextBox Task_title_txtbox;
-        private Button Edit_btn;
+        public Button Edit_btn;
         private TextBox End_txtbox;
         private Label To_lbl;
         private TextBox Start_txtbox;
         private Label From_lbl;
-        private Button More_btn;
-        private Button Delete_btn;
+        public Button More_btn;
+        public Button Delete_btn;
         public CheckBox Done_chkbx;
     }
 }

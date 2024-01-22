@@ -52,6 +52,8 @@
             groupBox1 = new GroupBox();
             label1 = new Label();
             TaskTitle_txtbx = new TextBox();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            closebtn = new Button();
             AddNewTask_pnl.SuspendLayout();
             groupBox7.SuspendLayout();
             groupBox6.SuspendLayout();
@@ -67,6 +69,7 @@
             // 
             AddNewTask_pnl.BackColor = Color.White;
             AddNewTask_pnl.BorderStyle = BorderStyle.Fixed3D;
+            AddNewTask_pnl.Controls.Add(closebtn);
             AddNewTask_pnl.Controls.Add(groupBox7);
             AddNewTask_pnl.Controls.Add(groupBox6);
             AddNewTask_pnl.Controls.Add(groupBox5);
@@ -339,6 +342,25 @@
             TaskTitle_txtbx.TextAlign = HorizontalAlignment.Center;
             TaskTitle_txtbx.TextChanged += TaskTitle_txtbx_TextChanged;
             // 
+            // sqlCommand1
+            // 
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
+            // 
+            // closebtn
+            // 
+            closebtn.BackColor = Color.Indigo;
+            closebtn.FlatStyle = FlatStyle.Popup;
+            closebtn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            closebtn.ForeColor = Color.White;
+            closebtn.Location = new Point(640, 574);
+            closebtn.Name = "closebtn";
+            closebtn.Size = new Size(41, 39);
+            closebtn.TabIndex = 22;
+            closebtn.Text = "X";
+            closebtn.UseVisualStyleBackColor = false;
+            closebtn.Click += closebtn_Click;
+            // 
             // AddNewTaskForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -392,5 +414,7 @@
         private GroupBox groupBox7;
         public Button Dicard_changes_btn;
         public Button Save_changes_btn;
+        public Button closebtn;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }

@@ -223,8 +223,35 @@ namespace taskManager.functions_class
             db.SaveChanges();    
         }
 
+        public static void DeleteTask(int id)
+        {
+            var task = db.tasks.FirstOrDefault(x=>x.TaskId == id);
+            db.tasks.Remove(task);
+            db.SaveChanges();
+        }
+
+        public static void CkeckedTasks(Main_Form form)
+        {
+            foreach(Task_Groub_box task in form.In_Progress_Tasks.Controls)
+            {
+                
+                if(task.Done_chkbx.Checked)
+                {
+                    var dtask = db.tasks.FirstOrDefault(t => t.TaskId == int.Parse(task.Task_ID_txtbox.Text));
+                    dtask.Done = true;
+                }
+            }
+            db.SaveChanges ();
+        }
+
     }
 
+    public static class ManageSharedValues
+    {
+        public static int CurrentUserId; 
+        public static Main_Form EssintionaForm ;
+       
+    }
     public static class ManageTasks
     {
         public static List<Task_Table> AllTasks = new List<Task_Table>();
@@ -272,12 +299,17 @@ namespace taskManager.functions_class
             Frm1.In_Progress_Tasks.Controls.Clear();
             Frm1.Completed_tasks.Controls.Clear();
             Frm1.Not_completed_tasks.Controls.Clear();
+           // Frm1.NOTACIEVED_pnl.Controls.Clear();
+          //  Frm1.ACIEVED_pnl.Controls.Clear();
+          //  Frm1.INPROGRESS_pnl.Controls.Clear();
+          //  Frm1.NOTSTAETED_pnl.Controls.Clear();
            
             foreach (var task in ManageTasks.NotStartedTasks)
             {
                 Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
                                                               task.Date_start.ToString(), task.Date_end.ToString());
                 Frm1.Tasks_Not_started.Controls.Add(t);
+           //     Frm1.NOTACIEVED_pnl.Controls.Add(t);
             }
 
             foreach (var task in ManageTasks.InProgressTasks)
@@ -286,20 +318,34 @@ namespace taskManager.functions_class
                                                               task.Date_start.ToString(), task.Date_end.ToString());
                 t.Done_chkbx.Visible = true;
                 Frm1.In_Progress_Tasks.Controls.Add(t);
+           //     Frm1.INPROGRESS_pnl.Controls.Add(t);
             }
 
             foreach (var task in ManageTasks.CompletedTasks) { 
                 Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
                                                               task.Date_start.ToString(), task.Date_end.ToString());
+                t.Edit_btn.Visible = false;
+                t.Edit_btn.Hide();
+                t.Delete_btn.Visible = false;
+                t.Delete_btn.Hide();
+                t.More_btn.Dock = DockStyle.Bottom;
                 Frm1.Completed_tasks.Controls.Add(t);
+           //     Frm1.ACIEVED_pnl.Controls.Add(t);
             }
 
             foreach (var task in ManageTasks.NotCompletedTasks)
             {
                 Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
                                                               task.Date_start.ToString(), task.Date_end.ToString());
+                t.Edit_btn.Visible = false;
+                t.Edit_btn.Hide();
+                t.Delete_btn.Visible = false;
+                t.Delete_btn.Hide();
+                t.More_btn.Dock = DockStyle.Bottom;
                 Frm1.Not_completed_tasks.Controls.Add(t);
+            //    Frm1.NOTACIEVED_pnl.Controls.Add(t);
             }
+          
 
         }
 
