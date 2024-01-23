@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewTaskForm));
             AddNewTask_pnl = new Panel();
+            button1 = new Button();
+            pictureBox1 = new PictureBox();
             groupBox7 = new GroupBox();
-            Dicard_changes_btn = new Button();
-            Save_changes_btn = new Button();
-            reset_btn = new Button();
             Add_task_btn = new Button();
+            Dicard_changes_btn = new Button();
+            reset_btn = new Button();
+            Save_changes_btn = new Button();
             groupBox6 = new GroupBox();
             label6 = new Label();
             Priority = new TrackBar();
@@ -53,8 +56,8 @@
             label1 = new Label();
             TaskTitle_txtbx = new TextBox();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            closebtn = new Button();
             AddNewTask_pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox7.SuspendLayout();
             groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Priority).BeginInit();
@@ -69,7 +72,8 @@
             // 
             AddNewTask_pnl.BackColor = Color.White;
             AddNewTask_pnl.BorderStyle = BorderStyle.Fixed3D;
-            AddNewTask_pnl.Controls.Add(closebtn);
+            AddNewTask_pnl.Controls.Add(button1);
+            AddNewTask_pnl.Controls.Add(pictureBox1);
             AddNewTask_pnl.Controls.Add(groupBox7);
             AddNewTask_pnl.Controls.Add(groupBox6);
             AddNewTask_pnl.Controls.Add(groupBox5);
@@ -80,69 +84,51 @@
             AddNewTask_pnl.ForeColor = Color.Indigo;
             AddNewTask_pnl.Location = new Point(12, 12);
             AddNewTask_pnl.Name = "AddNewTask_pnl";
-            AddNewTask_pnl.Size = new Size(688, 620);
+            AddNewTask_pnl.Size = new Size(1341, 682);
             AddNewTask_pnl.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(1245, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(43, 40);
+            button1.TabIndex = 22;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(657, 72);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(631, 558);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 21;
+            pictureBox1.TabStop = false;
             // 
             // groupBox7
             // 
-            groupBox7.Controls.Add(Dicard_changes_btn);
-            groupBox7.Controls.Add(Save_changes_btn);
-            groupBox7.Controls.Add(reset_btn);
             groupBox7.Controls.Add(Add_task_btn);
-            groupBox7.Location = new Point(171, 528);
+            groupBox7.Controls.Add(Dicard_changes_btn);
+            groupBox7.Controls.Add(reset_btn);
+            groupBox7.Controls.Add(Save_changes_btn);
+            groupBox7.Location = new Point(128, 576);
             groupBox7.Name = "groupBox7";
             groupBox7.Size = new Size(353, 61);
             groupBox7.TabIndex = 20;
             groupBox7.TabStop = false;
             // 
-            // Dicard_changes_btn
-            // 
-            Dicard_changes_btn.BackColor = Color.Indigo;
-            Dicard_changes_btn.FlatStyle = FlatStyle.Popup;
-            Dicard_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            Dicard_changes_btn.ForeColor = Color.White;
-            Dicard_changes_btn.Location = new Point(189, 15);
-            Dicard_changes_btn.Name = "Dicard_changes_btn";
-            Dicard_changes_btn.Size = new Size(156, 39);
-            Dicard_changes_btn.TabIndex = 22;
-            Dicard_changes_btn.Text = "Discard";
-            Dicard_changes_btn.UseVisualStyleBackColor = false;
-            Dicard_changes_btn.Click += Dicard_changes_btn_Click;
-            // 
-            // Save_changes_btn
-            // 
-            Save_changes_btn.BackColor = Color.Indigo;
-            Save_changes_btn.FlatStyle = FlatStyle.Popup;
-            Save_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            Save_changes_btn.ForeColor = Color.White;
-            Save_changes_btn.Location = new Point(6, 15);
-            Save_changes_btn.Name = "Save_changes_btn";
-            Save_changes_btn.Size = new Size(156, 39);
-            Save_changes_btn.TabIndex = 21;
-            Save_changes_btn.Text = "Save";
-            Save_changes_btn.UseVisualStyleBackColor = false;
-            Save_changes_btn.Click += Save_changes_btn_Click;
-            // 
-            // reset_btn
-            // 
-            reset_btn.BackColor = Color.Indigo;
-            reset_btn.FlatStyle = FlatStyle.Popup;
-            reset_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            reset_btn.ForeColor = Color.White;
-            reset_btn.Location = new Point(189, 15);
-            reset_btn.Name = "reset_btn";
-            reset_btn.Size = new Size(156, 39);
-            reset_btn.TabIndex = 7;
-            reset_btn.Text = "Reset Data";
-            reset_btn.UseVisualStyleBackColor = false;
-            reset_btn.Click += reset_btn_Click;
-            // 
             // Add_task_btn
             // 
-            Add_task_btn.BackColor = Color.Indigo;
-            Add_task_btn.FlatStyle = FlatStyle.Popup;
+            Add_task_btn.BackColor = Color.FromArgb(24, 30, 54);
+            Add_task_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
+            Add_task_btn.FlatStyle = FlatStyle.Flat;
             Add_task_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            Add_task_btn.ForeColor = Color.White;
+            Add_task_btn.ForeColor = Color.FromArgb(0, 126, 249);
             Add_task_btn.Location = new Point(6, 15);
             Add_task_btn.Name = "Add_task_btn";
             Add_task_btn.Size = new Size(156, 39);
@@ -151,11 +137,56 @@
             Add_task_btn.UseVisualStyleBackColor = false;
             Add_task_btn.Click += Add_task_btn_Click;
             // 
+            // Dicard_changes_btn
+            // 
+            Dicard_changes_btn.BackColor = Color.FromArgb(24, 30, 54);
+            Dicard_changes_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
+            Dicard_changes_btn.FlatStyle = FlatStyle.Flat;
+            Dicard_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Dicard_changes_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            Dicard_changes_btn.Location = new Point(189, 15);
+            Dicard_changes_btn.Name = "Dicard_changes_btn";
+            Dicard_changes_btn.Size = new Size(156, 39);
+            Dicard_changes_btn.TabIndex = 22;
+            Dicard_changes_btn.Text = "Discard";
+            Dicard_changes_btn.UseVisualStyleBackColor = false;
+            Dicard_changes_btn.Click += Dicard_changes_btn_Click;
+            // 
+            // reset_btn
+            // 
+            reset_btn.BackColor = Color.FromArgb(24, 30, 54);
+            reset_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
+            reset_btn.FlatStyle = FlatStyle.Flat;
+            reset_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            reset_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            reset_btn.Location = new Point(189, 15);
+            reset_btn.Name = "reset_btn";
+            reset_btn.Size = new Size(156, 39);
+            reset_btn.TabIndex = 7;
+            reset_btn.Text = "Reset Data";
+            reset_btn.UseVisualStyleBackColor = false;
+            reset_btn.Click += reset_btn_Click;
+            // 
+            // Save_changes_btn
+            // 
+            Save_changes_btn.BackColor = Color.FromArgb(24, 30, 54);
+            Save_changes_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
+            Save_changes_btn.FlatStyle = FlatStyle.Flat;
+            Save_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Save_changes_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            Save_changes_btn.Location = new Point(6, 15);
+            Save_changes_btn.Name = "Save_changes_btn";
+            Save_changes_btn.Size = new Size(156, 39);
+            Save_changes_btn.TabIndex = 21;
+            Save_changes_btn.Text = "Save";
+            Save_changes_btn.UseVisualStyleBackColor = false;
+            Save_changes_btn.Click += Save_changes_btn_Click;
+            // 
             // groupBox6
             // 
             groupBox6.Controls.Add(label6);
             groupBox6.Controls.Add(Priority);
-            groupBox6.Location = new Point(35, 419);
+            groupBox6.Location = new Point(29, 450);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(609, 103);
             groupBox6.TabIndex = 19;
@@ -165,7 +196,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label6.ForeColor = Color.Indigo;
+            label6.ForeColor = Color.FromArgb(0, 126, 249);
             label6.Location = new Point(6, 43);
             label6.Name = "label6";
             label6.Size = new Size(156, 32);
@@ -174,7 +205,7 @@
             // 
             // Priority
             // 
-            Priority.BackColor = Color.Indigo;
+            Priority.BackColor = Color.FromArgb(24, 30, 54);
             Priority.Cursor = Cursors.Cross;
             Priority.Location = new Point(277, 30);
             Priority.Name = "Priority";
@@ -185,7 +216,7 @@
             // 
             groupBox5.Controls.Add(label5);
             groupBox5.Controls.Add(TimeInH_txtbx);
-            groupBox5.Location = new Point(35, 357);
+            groupBox5.Location = new Point(29, 380);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(609, 60);
             groupBox5.TabIndex = 18;
@@ -195,7 +226,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label5.ForeColor = Color.Indigo;
+            label5.ForeColor = Color.FromArgb(0, 126, 249);
             label5.Location = new Point(6, 19);
             label5.Name = "label5";
             label5.Size = new Size(222, 25);
@@ -204,10 +235,10 @@
             // 
             // TimeInH_txtbx
             // 
-            TimeInH_txtbx.BackColor = Color.Indigo;
+            TimeInH_txtbx.BackColor = Color.FromArgb(24, 30, 54);
             TimeInH_txtbx.Cursor = Cursors.IBeam;
             TimeInH_txtbx.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            TimeInH_txtbx.ForeColor = Color.White;
+            TimeInH_txtbx.ForeColor = Color.FromArgb(0, 126, 249);
             TimeInH_txtbx.Location = new Point(277, 15);
             TimeInH_txtbx.Multiline = true;
             TimeInH_txtbx.Name = "TimeInH_txtbx";
@@ -219,7 +250,7 @@
             // 
             groupBox4.Controls.Add(label4);
             groupBox4.Controls.Add(Date_end);
-            groupBox4.Location = new Point(35, 306);
+            groupBox4.Location = new Point(29, 322);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(609, 52);
             groupBox4.TabIndex = 17;
@@ -229,7 +260,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label4.ForeColor = Color.Indigo;
+            label4.ForeColor = Color.FromArgb(0, 126, 249);
             label4.Location = new Point(6, 17);
             label4.Name = "label4";
             label4.Size = new Size(41, 32);
@@ -248,7 +279,7 @@
             // 
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(From);
-            groupBox3.Location = new Point(35, 248);
+            groupBox3.Location = new Point(29, 264);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(610, 52);
             groupBox3.TabIndex = 16;
@@ -258,7 +289,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label3.ForeColor = Color.Indigo;
+            label3.ForeColor = Color.FromArgb(0, 126, 249);
             label3.Location = new Point(6, 14);
             label3.Name = "label3";
             label3.Size = new Size(73, 32);
@@ -277,7 +308,7 @@
             // 
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(TaskDesc_txtbx);
-            groupBox2.Location = new Point(35, 77);
+            groupBox2.Location = new Point(29, 93);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(610, 165);
             groupBox2.TabIndex = 15;
@@ -287,7 +318,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label2.ForeColor = Color.Indigo;
+            label2.ForeColor = Color.FromArgb(0, 126, 249);
             label2.Location = new Point(6, 60);
             label2.Name = "label2";
             label2.Size = new Size(199, 32);
@@ -296,10 +327,10 @@
             // 
             // TaskDesc_txtbx
             // 
-            TaskDesc_txtbx.BackColor = Color.Indigo;
+            TaskDesc_txtbx.BackColor = Color.FromArgb(24, 30, 54);
             TaskDesc_txtbx.Cursor = Cursors.IBeam;
             TaskDesc_txtbx.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            TaskDesc_txtbx.ForeColor = Color.White;
+            TaskDesc_txtbx.ForeColor = Color.FromArgb(0, 126, 249);
             TaskDesc_txtbx.Location = new Point(277, 22);
             TaskDesc_txtbx.Multiline = true;
             TaskDesc_txtbx.Name = "TaskDesc_txtbx";
@@ -311,7 +342,7 @@
             // 
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(TaskTitle_txtbx);
-            groupBox1.Location = new Point(35, 13);
+            groupBox1.Location = new Point(29, 29);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(610, 58);
             groupBox1.TabIndex = 14;
@@ -321,7 +352,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label1.ForeColor = Color.Indigo;
+            label1.ForeColor = Color.FromArgb(0, 126, 249);
             label1.Location = new Point(6, 14);
             label1.Name = "label1";
             label1.Size = new Size(120, 32);
@@ -330,10 +361,10 @@
             // 
             // TaskTitle_txtbx
             // 
-            TaskTitle_txtbx.BackColor = Color.Indigo;
+            TaskTitle_txtbx.BackColor = Color.FromArgb(24, 30, 54);
             TaskTitle_txtbx.Cursor = Cursors.IBeam;
             TaskTitle_txtbx.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            TaskTitle_txtbx.ForeColor = Color.White;
+            TaskTitle_txtbx.ForeColor = Color.FromArgb(0, 126, 249);
             TaskTitle_txtbx.Location = new Point(277, 14);
             TaskTitle_txtbx.Multiline = true;
             TaskTitle_txtbx.Name = "TaskTitle_txtbx";
@@ -347,31 +378,21 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
-            // closebtn
-            // 
-            closebtn.BackColor = Color.Indigo;
-            closebtn.FlatStyle = FlatStyle.Popup;
-            closebtn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            closebtn.ForeColor = Color.White;
-            closebtn.Location = new Point(640, 574);
-            closebtn.Name = "closebtn";
-            closebtn.Size = new Size(41, 39);
-            closebtn.TabIndex = 22;
-            closebtn.Text = "X";
-            closebtn.UseVisualStyleBackColor = false;
-            closebtn.Click += closebtn_Click;
-            // 
             // AddNewTaskForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Indigo;
-            ClientSize = new Size(713, 643);
+            BackColor = Color.FromArgb(24, 30, 54);
+            ClientSize = new Size(1368, 706);
             Controls.Add(AddNewTask_pnl);
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
+            Location = new Point(500, 500);
             Name = "AddNewTaskForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Main Page";
             AddNewTask_pnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox7.ResumeLayout(false);
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
@@ -414,7 +435,8 @@
         private GroupBox groupBox7;
         public Button Dicard_changes_btn;
         public Button Save_changes_btn;
-        public Button closebtn;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private PictureBox pictureBox1;
+        private Button button1;
     }
 }

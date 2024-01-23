@@ -54,7 +54,7 @@
             textBox1.Name = "textBox1";
             textBox1.PasswordChar = '*';
             textBox1.Size = new Size(286, 40);
-            textBox1.TabIndex = 6;
+            textBox1.TabIndex = 2;
             textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // label4
@@ -90,7 +90,7 @@
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(286, 40);
-            textBox2.TabIndex = 10;
+            textBox2.TabIndex = 1;
             textBox2.TextAlign = HorizontalAlignment.Center;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
@@ -126,7 +126,7 @@
             exitbtn.Location = new Point(166, 627);
             exitbtn.Name = "exitbtn";
             exitbtn.Size = new Size(186, 37);
-            exitbtn.TabIndex = 15;
+            exitbtn.TabIndex = 6;
             exitbtn.Text = "Exit";
             exitbtn.UseVisualStyleBackColor = false;
             exitbtn.Click += exitbtn_Click;
@@ -142,7 +142,7 @@
             clearallbtn.Location = new Point(166, 562);
             clearallbtn.Name = "clearallbtn";
             clearallbtn.Size = new Size(186, 37);
-            clearallbtn.TabIndex = 14;
+            clearallbtn.TabIndex = 5;
             clearallbtn.Text = "Clear All";
             clearallbtn.UseVisualStyleBackColor = false;
             clearallbtn.Click += clearallbtn_Click;
@@ -158,7 +158,7 @@
             loginbtn.Location = new Point(166, 496);
             loginbtn.Name = "loginbtn";
             loginbtn.Size = new Size(186, 37);
-            loginbtn.TabIndex = 14;
+            loginbtn.TabIndex = 4;
             loginbtn.Text = "Login";
             loginbtn.UseVisualStyleBackColor = false;
             loginbtn.Click += loginbtn_Click;
@@ -172,7 +172,7 @@
             ShowPassword.Location = new Point(46, 459);
             ShowPassword.Name = "ShowPassword";
             ShowPassword.Size = new Size(112, 19);
-            ShowPassword.TabIndex = 13;
+            ShowPassword.TabIndex = 3;
             ShowPassword.Text = "Show Password";
             ShowPassword.UseVisualStyleBackColor = false;
             ShowPassword.CheckedChanged += ShowPassword_CheckedChanged;

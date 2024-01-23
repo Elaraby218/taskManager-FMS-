@@ -134,7 +134,7 @@
             Log_out_btn.Image = (Image)resources.GetObject("Log_out_btn.Image");
             Log_out_btn.Location = new Point(-3, 727);
             Log_out_btn.Name = "Log_out_btn";
-            Log_out_btn.Size = new Size(214, 54);
+            Log_out_btn.Size = new Size(229, 54);
             Log_out_btn.TabIndex = 1;
             Log_out_btn.Text = "Log out";
             Log_out_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -386,6 +386,7 @@
             Controls.Add(Tasks_Not_started);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Main_Form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Main_Form";
             Load += Main_Form_Load;
             panel1.ResumeLayout(false);

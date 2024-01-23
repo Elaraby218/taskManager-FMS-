@@ -35,7 +35,7 @@ namespace taskManager
         public Main_Form(UserTable current_user)
         {
             InitializeComponent();
-            
+        
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             CurUser = current_user;
             ManageTasks.ViewTasks(this);
@@ -145,6 +145,7 @@ namespace taskManager
             ntp.Save_changes_btn.Hide();
             ntp.Add_task_btn.Enabled = true;
             ntp.reset_btn.Enabled = true;
+            ntp.Location = new Point(226, 94);
             ntp.ShowDialog();
         }
 
