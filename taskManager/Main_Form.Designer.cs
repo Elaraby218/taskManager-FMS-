@@ -50,14 +50,12 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            NOTSTAETED_pnl = new FlowLayoutPanel();
-            INPROGRESS_pnl = new FlowLayoutPanel();
-            ACIEVED_pnl = new FlowLayoutPanel();
-            NOTACIEVED_pnl = new FlowLayoutPanel();
+            inprogress_lbl = new Label();
+            taskackieved_lbl = new Label();
+            notachievedtasks_lbl = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            INPROGRESS_pnl.SuspendLayout();
             SuspendLayout();
             // 
             // Tasks_Not_started
@@ -150,14 +148,16 @@
             NotCompletedTasks_btn.FlatStyle = FlatStyle.Flat;
             NotCompletedTasks_btn.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             NotCompletedTasks_btn.ForeColor = Color.FromArgb(0, 126, 249);
-            NotCompletedTasks_btn.Image = Properties.Resources.home;
-            NotCompletedTasks_btn.Location = new Point(-3, 442);
+            NotCompletedTasks_btn.Image = (Image)resources.GetObject("NotCompletedTasks_btn.Image");
+            NotCompletedTasks_btn.Location = new Point(3, 442);
             NotCompletedTasks_btn.Name = "NotCompletedTasks_btn";
             NotCompletedTasks_btn.Size = new Size(214, 54);
             NotCompletedTasks_btn.TabIndex = 1;
             NotCompletedTasks_btn.Text = "Tasks Not Achieved";
             NotCompletedTasks_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
             NotCompletedTasks_btn.UseVisualStyleBackColor = true;
+            NotCompletedTasks_btn.Click += NotCompletedTasks_btn_Click;
+            NotCompletedTasks_btn.Leave += NotCompletedTasks_btn_Leave;
             // 
             // CompleteTasks_btn
             // 
@@ -165,14 +165,16 @@
             CompleteTasks_btn.FlatStyle = FlatStyle.Flat;
             CompleteTasks_btn.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CompleteTasks_btn.ForeColor = Color.FromArgb(0, 126, 249);
-            CompleteTasks_btn.Image = Properties.Resources.home;
-            CompleteTasks_btn.Location = new Point(-3, 382);
+            CompleteTasks_btn.Image = (Image)resources.GetObject("CompleteTasks_btn.Image");
+            CompleteTasks_btn.Location = new Point(3, 382);
             CompleteTasks_btn.Name = "CompleteTasks_btn";
             CompleteTasks_btn.Size = new Size(214, 54);
             CompleteTasks_btn.TabIndex = 1;
             CompleteTasks_btn.Text = "Tasks Achieved";
             CompleteTasks_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
             CompleteTasks_btn.UseVisualStyleBackColor = true;
+            CompleteTasks_btn.Click += CompleteTasks_btn_Click;
+            CompleteTasks_btn.Leave += CompleteTasks_btn_Leave;
             // 
             // InProgressTask_btn
             // 
@@ -180,14 +182,16 @@
             InProgressTask_btn.FlatStyle = FlatStyle.Flat;
             InProgressTask_btn.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             InProgressTask_btn.ForeColor = Color.FromArgb(0, 126, 249);
-            InProgressTask_btn.Image = Properties.Resources.home;
-            InProgressTask_btn.Location = new Point(3, 322);
+            InProgressTask_btn.Image = (Image)resources.GetObject("InProgressTask_btn.Image");
+            InProgressTask_btn.Location = new Point(0, 322);
             InProgressTask_btn.Name = "InProgressTask_btn";
-            InProgressTask_btn.Size = new Size(214, 54);
+            InProgressTask_btn.Size = new Size(226, 54);
             InProgressTask_btn.TabIndex = 1;
             InProgressTask_btn.Text = "In Progress";
             InProgressTask_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
             InProgressTask_btn.UseVisualStyleBackColor = true;
+            InProgressTask_btn.Click += InProgressTask_btn_Click;
+            InProgressTask_btn.Leave += InProgressTask_btn_Leave;
             // 
             // NotStartedTasks_btn
             // 
@@ -195,15 +199,16 @@
             NotStartedTasks_btn.FlatStyle = FlatStyle.Flat;
             NotStartedTasks_btn.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             NotStartedTasks_btn.ForeColor = Color.FromArgb(0, 126, 249);
-            NotStartedTasks_btn.Image = Properties.Resources.home;
-            NotStartedTasks_btn.Location = new Point(0, 270);
+            NotStartedTasks_btn.Image = (Image)resources.GetObject("NotStartedTasks_btn.Image");
+            NotStartedTasks_btn.Location = new Point(3, 270);
             NotStartedTasks_btn.Name = "NotStartedTasks_btn";
-            NotStartedTasks_btn.Size = new Size(214, 54);
+            NotStartedTasks_btn.Size = new Size(223, 54);
             NotStartedTasks_btn.TabIndex = 1;
             NotStartedTasks_btn.Text = "Not Started";
             NotStartedTasks_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
             NotStartedTasks_btn.UseVisualStyleBackColor = true;
             NotStartedTasks_btn.Click += NotStartedTasks_btn_Click;
+            NotStartedTasks_btn.Leave += NotStartedTasks_btn_Leave;
             // 
             // Add_new_task_btn
             // 
@@ -212,7 +217,7 @@
             Add_new_task_btn.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Add_new_task_btn.ForeColor = Color.FromArgb(0, 126, 249);
             Add_new_task_btn.Image = (Image)resources.GetObject("Add_new_task_btn.Image");
-            Add_new_task_btn.Location = new Point(0, 210);
+            Add_new_task_btn.Location = new Point(6, 210);
             Add_new_task_btn.Name = "Add_new_task_btn";
             Add_new_task_btn.Size = new Size(211, 54);
             Add_new_task_btn.TabIndex = 1;
@@ -229,7 +234,7 @@
             dashboardbtn.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dashboardbtn.ForeColor = Color.FromArgb(0, 126, 249);
             dashboardbtn.Image = Properties.Resources.home;
-            dashboardbtn.Location = new Point(3, 150);
+            dashboardbtn.Location = new Point(9, 150);
             dashboardbtn.Name = "dashboardbtn";
             dashboardbtn.Size = new Size(214, 54);
             dashboardbtn.TabIndex = 1;
@@ -327,38 +332,38 @@
             label4.TabIndex = 3;
             label4.Text = "Tasks Not Achieved";
             // 
-            // NOTSTAETED_pnl
+            // inprogress_lbl
             // 
-            NOTSTAETED_pnl.BackColor = Color.FromArgb(24, 30, 54);
-            NOTSTAETED_pnl.Location = new Point(226, 94);
-            NOTSTAETED_pnl.Name = "NOTSTAETED_pnl";
-            NOTSTAETED_pnl.Size = new Size(1341, 679);
-            NOTSTAETED_pnl.TabIndex = 8;
+            inprogress_lbl.AutoSize = true;
+            inprogress_lbl.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            inprogress_lbl.ForeColor = Color.FromArgb(158, 161, 176);
+            inprogress_lbl.Location = new Point(226, 45);
+            inprogress_lbl.Name = "inprogress_lbl";
+            inprogress_lbl.Size = new Size(215, 39);
+            inprogress_lbl.TabIndex = 3;
+            inprogress_lbl.Text = "In Progress ";
             // 
-            // INPROGRESS_pnl
+            // taskackieved_lbl
             // 
-            INPROGRESS_pnl.BackColor = Color.FromArgb(24, 30, 54);
-            INPROGRESS_pnl.Controls.Add(ACIEVED_pnl);
-            INPROGRESS_pnl.Location = new Point(226, 89);
-            INPROGRESS_pnl.Name = "INPROGRESS_pnl";
-            INPROGRESS_pnl.Size = new Size(1341, 679);
-            INPROGRESS_pnl.TabIndex = 9;
+            taskackieved_lbl.AutoSize = true;
+            taskackieved_lbl.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            taskackieved_lbl.ForeColor = Color.FromArgb(158, 161, 176);
+            taskackieved_lbl.Location = new Point(226, 45);
+            taskackieved_lbl.Name = "taskackieved_lbl";
+            taskackieved_lbl.Size = new Size(277, 39);
+            taskackieved_lbl.TabIndex = 3;
+            taskackieved_lbl.Text = "Tasks Achieved";
             // 
-            // ACIEVED_pnl
+            // notachievedtasks_lbl
             // 
-            ACIEVED_pnl.BackColor = Color.FromArgb(24, 30, 54);
-            ACIEVED_pnl.Location = new Point(3, 3);
-            ACIEVED_pnl.Name = "ACIEVED_pnl";
-            ACIEVED_pnl.Size = new Size(1341, 679);
-            ACIEVED_pnl.TabIndex = 10;
-            // 
-            // NOTACIEVED_pnl
-            // 
-            NOTACIEVED_pnl.BackColor = Color.FromArgb(24, 30, 54);
-            NOTACIEVED_pnl.Location = new Point(229, 89);
-            NOTACIEVED_pnl.Name = "NOTACIEVED_pnl";
-            NOTACIEVED_pnl.Size = new Size(1341, 679);
-            NOTACIEVED_pnl.TabIndex = 11;
+            notachievedtasks_lbl.AutoSize = true;
+            notachievedtasks_lbl.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            notachievedtasks_lbl.ForeColor = Color.FromArgb(158, 161, 176);
+            notachievedtasks_lbl.Location = new Point(226, 45);
+            notachievedtasks_lbl.Name = "notachievedtasks_lbl";
+            notachievedtasks_lbl.Size = new Size(344, 39);
+            notachievedtasks_lbl.TabIndex = 3;
+            notachievedtasks_lbl.Text = "Tasks Not Achieved";
             // 
             // Main_Form
             // 
@@ -366,10 +371,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1579, 785);
-            Controls.Add(NOTACIEVED_pnl);
-            Controls.Add(INPROGRESS_pnl);
-            Controls.Add(NOTSTAETED_pnl);
             Controls.Add(textBox1);
+            Controls.Add(notachievedtasks_lbl);
+            Controls.Add(taskackieved_lbl);
+            Controls.Add(inprogress_lbl);
             Controls.Add(label2);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -387,7 +392,6 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            INPROGRESS_pnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -415,9 +419,8 @@
         private Button NotCompletedTasks_btn;
         private Label label3;
         private Label label4;
-        private FlowLayoutPanel NOTSTAETED_pnl;
-        private FlowLayoutPanel INPROGRESS_pnl;
-        private FlowLayoutPanel ACIEVED_pnl;
-        private FlowLayoutPanel NOTACIEVED_pnl;
+        private Label inprogress_lbl;
+        private Label taskackieved_lbl;
+        private Label notachievedtasks_lbl;
     }
 }

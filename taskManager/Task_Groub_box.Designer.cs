@@ -46,6 +46,7 @@
             // 
             // Task_gbx
             // 
+            Task_gbx.BackgroundImageLayout = ImageLayout.Zoom;
             Task_gbx.Controls.Add(More_btn);
             Task_gbx.Controls.Add(Delete_btn);
             Task_gbx.Controls.Add(Edit_btn);
@@ -57,18 +58,21 @@
             Task_gbx.Controls.Add(Task_ID_lbl);
             Task_gbx.Controls.Add(Task_title_txtbox);
             Task_gbx.Controls.Add(Task_Name_lbl);
-            Task_gbx.Location = new Point(14, 19);
+            Task_gbx.ForeColor = Color.FromArgb(0, 126, 249);
+            Task_gbx.Location = new Point(3, -1);
             Task_gbx.Name = "Task_gbx";
-            Task_gbx.Size = new Size(388, 261);
+            Task_gbx.Size = new Size(409, 288);
             Task_gbx.TabIndex = 0;
             Task_gbx.TabStop = false;
             // 
             // More_btn
             // 
-            More_btn.BackColor = Color.White;
-            More_btn.FlatStyle = FlatStyle.Popup;
+            More_btn.BackColor = Color.FromArgb(24, 30, 53);
+            More_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
+            More_btn.FlatStyle = FlatStyle.Flat;
             More_btn.Font = new Font("Reem Kufi Fun SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            More_btn.Location = new Point(254, 214);
+            More_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            More_btn.Location = new Point(264, 232);
             More_btn.Name = "More_btn";
             More_btn.Size = new Size(104, 33);
             More_btn.TabIndex = 10;
@@ -79,10 +83,12 @@
             // 
             // Delete_btn
             // 
-            Delete_btn.BackColor = Color.White;
-            Delete_btn.FlatStyle = FlatStyle.Popup;
+            Delete_btn.BackColor = Color.FromArgb(24, 30, 53);
+            Delete_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
+            Delete_btn.FlatStyle = FlatStyle.Flat;
             Delete_btn.Font = new Font("Reem Kufi Fun SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Delete_btn.Location = new Point(144, 214);
+            Delete_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            Delete_btn.Location = new Point(154, 232);
             Delete_btn.Name = "Delete_btn";
             Delete_btn.Size = new Size(104, 33);
             Delete_btn.TabIndex = 9;
@@ -93,10 +99,12 @@
             // 
             // Edit_btn
             // 
-            Edit_btn.BackColor = Color.White;
-            Edit_btn.FlatStyle = FlatStyle.Popup;
+            Edit_btn.BackColor = Color.FromArgb(24, 30, 53);
+            Edit_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
+            Edit_btn.FlatStyle = FlatStyle.Flat;
             Edit_btn.Font = new Font("Reem Kufi Fun SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Edit_btn.Location = new Point(34, 214);
+            Edit_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            Edit_btn.Location = new Point(44, 232);
             Edit_btn.Name = "Edit_btn";
             Edit_btn.Size = new Size(104, 33);
             Edit_btn.TabIndex = 8;
@@ -107,8 +115,10 @@
             // 
             // End_txtbox
             // 
+            End_txtbox.BackColor = Color.White;
             End_txtbox.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            End_txtbox.Location = new Point(111, 156);
+            End_txtbox.ForeColor = Color.FromArgb(0, 126, 249);
+            End_txtbox.Location = new Point(121, 174);
             End_txtbox.Name = "End_txtbox";
             End_txtbox.ReadOnly = true;
             End_txtbox.Size = new Size(257, 36);
@@ -119,7 +129,8 @@
             // 
             To_lbl.AutoSize = true;
             To_lbl.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            To_lbl.Location = new Point(6, 156);
+            To_lbl.ForeColor = Color.FromArgb(0, 126, 249);
+            To_lbl.Location = new Point(16, 174);
             To_lbl.Name = "To_lbl";
             To_lbl.Size = new Size(80, 35);
             To_lbl.TabIndex = 6;
@@ -127,8 +138,10 @@
             // 
             // Start_txtbox
             // 
+            Start_txtbox.BackColor = Color.White;
             Start_txtbox.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Start_txtbox.Location = new Point(111, 114);
+            Start_txtbox.ForeColor = Color.FromArgb(0, 126, 249);
+            Start_txtbox.Location = new Point(121, 132);
             Start_txtbox.Name = "Start_txtbox";
             Start_txtbox.ReadOnly = true;
             Start_txtbox.Size = new Size(257, 36);
@@ -139,7 +152,8 @@
             // 
             From_lbl.AutoSize = true;
             From_lbl.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            From_lbl.Location = new Point(6, 114);
+            From_lbl.ForeColor = Color.FromArgb(0, 126, 249);
+            From_lbl.Location = new Point(16, 132);
             From_lbl.Name = "From_lbl";
             From_lbl.Size = new Size(90, 35);
             From_lbl.TabIndex = 4;
@@ -147,8 +161,10 @@
             // 
             // Task_ID_txtbox
             // 
+            Task_ID_txtbox.BackColor = Color.White;
             Task_ID_txtbox.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Task_ID_txtbox.Location = new Point(111, 72);
+            Task_ID_txtbox.ForeColor = Color.FromArgb(0, 126, 249);
+            Task_ID_txtbox.Location = new Point(121, 90);
             Task_ID_txtbox.Name = "Task_ID_txtbox";
             Task_ID_txtbox.ReadOnly = true;
             Task_ID_txtbox.Size = new Size(257, 36);
@@ -159,7 +175,8 @@
             // 
             Task_ID_lbl.AutoSize = true;
             Task_ID_lbl.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Task_ID_lbl.Location = new Point(6, 72);
+            Task_ID_lbl.ForeColor = Color.FromArgb(0, 126, 249);
+            Task_ID_lbl.Location = new Point(16, 90);
             Task_ID_lbl.Name = "Task_ID_lbl";
             Task_ID_lbl.Size = new Size(82, 35);
             Task_ID_lbl.TabIndex = 2;
@@ -167,8 +184,10 @@
             // 
             // Task_title_txtbox
             // 
+            Task_title_txtbox.BackColor = Color.FromArgb(224, 224, 224);
             Task_title_txtbox.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Task_title_txtbox.Location = new Point(111, 30);
+            Task_title_txtbox.ForeColor = Color.FromArgb(0, 126, 249);
+            Task_title_txtbox.Location = new Point(121, 45);
             Task_title_txtbox.Name = "Task_title_txtbox";
             Task_title_txtbox.ReadOnly = true;
             Task_title_txtbox.Size = new Size(257, 36);
@@ -180,7 +199,8 @@
             // 
             Task_Name_lbl.AutoSize = true;
             Task_Name_lbl.Font = new Font("Reem Kufi Fun SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Task_Name_lbl.Location = new Point(6, 30);
+            Task_Name_lbl.ForeColor = Color.FromArgb(0, 126, 249);
+            Task_Name_lbl.Location = new Point(16, 48);
             Task_Name_lbl.Name = "Task_Name_lbl";
             Task_Name_lbl.Size = new Size(99, 35);
             Task_Name_lbl.TabIndex = 0;
@@ -190,6 +210,7 @@
             // 
             Done_chkbx.AutoSize = true;
             Done_chkbx.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            Done_chkbx.ForeColor = Color.FromArgb(0, 126, 249);
             Done_chkbx.Location = new Point(14, 3);
             Done_chkbx.Name = "Done_chkbx";
             Done_chkbx.Size = new Size(100, 19);
@@ -202,10 +223,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(24, 30, 53);
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(Done_chkbx);
             Controls.Add(Task_gbx);
             Name = "Task_Groub_box";
-            Size = new Size(417, 292);
+            Size = new Size(415, 290);
             Task_gbx.ResumeLayout(false);
             Task_gbx.PerformLayout();
             ResumeLayout(false);
