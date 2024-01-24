@@ -384,11 +384,12 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1324, 0);
+            button1.Location = new Point(1319, 0);
             button1.Name = "button1";
             button1.Size = new Size(25, 23);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Main_Form
             // 

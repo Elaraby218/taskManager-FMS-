@@ -195,6 +195,7 @@
             Name = "longin_form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login Page";
+            Load += longin_form_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

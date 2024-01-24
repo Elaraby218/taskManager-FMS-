@@ -23,8 +23,7 @@ namespace taskManager
             InitializeComponent();
 
             //   Manage.CustomizeButtonAppearance(Add_Task);
-            Manage.CustomizeButtonAppearance(Add_task_btn);
-            Manage.CustomizeButtonAppearance(reset_btn);
+           
             this.Paint += Main_Page_Paint;
         }
 
@@ -32,8 +31,7 @@ namespace taskManager
         {
             InitializeComponent();
             //   Manage.CustomizeButtonAppearance(Add_Task);
-            Manage.CustomizeButtonAppearance(Add_task_btn);
-            Manage.CustomizeButtonAppearance(reset_btn);
+           
             this.Paint += Main_Page_Paint;
             MAIN_FORM = MainForm;
             CurUserr = CurUser;
@@ -128,18 +126,21 @@ namespace taskManager
 
         private void Save_changes_btn_Click(object sender, EventArgs e)
         {
-
-            CurTask.Task_Title = this.TaskTitle_txtbx.Text;
-            CurTask.Task_describtion = this.TaskDesc_txtbx.Text;
-            CurTask.Time_Needed = this.TimeInH_txtbx.Text;
-            CurTask.Priority = this.Priority.Value;
-            CurTask.Date_start = this.From.Text.ToString();
-            CurTask.Date_end = this.Date_end.Text.ToString();
-            ManageDatabase.EditTask(CurTask);
-            MessageBox.Show($"Done successfully , thsk id is {CurTask.TaskId}");
-            ManageDatabase.GetUserTasks(CurUserr.UserId);
-            ManageTasks.ViewTasks(MAIN_FORM);
-            this.Close();
+            if (ValidationMethods.ValidTask(TaskTitle_txtbx.Text, TaskDesc_txtbx.Text,
+                                                  From.Text.ToString(), Date_end.Text.ToString(), TimeInH_txtbx.Text))
+            {
+                CurTask.Task_Title = this.TaskTitle_txtbx.Text;
+                CurTask.Task_describtion = this.TaskDesc_txtbx.Text;
+                CurTask.Time_Needed = this.TimeInH_txtbx.Text;
+                CurTask.Priority = this.Priority.Value;
+                CurTask.Date_start = this.From.Text.ToString();
+                CurTask.Date_end = this.Date_end.Text.ToString();
+                ManageDatabase.EditTask(CurTask);
+                MessageBox.Show($"Done successfully , thsk id is {CurTask.TaskId}");
+                ManageDatabase.GetUserTasks(CurUserr.UserId);
+                ManageTasks.ViewTasks(MAIN_FORM);
+                this.Close();
+            }
         }
 
         private void Dicard_changes_btn_Click(object sender, EventArgs e)
@@ -201,6 +202,11 @@ namespace taskManager
         }
 
         private void TimeInH_txtbx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

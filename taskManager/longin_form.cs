@@ -74,7 +74,7 @@ namespace taskManager
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-           
+
             if (String.IsNullOrWhiteSpace(textBox2.Text) || String.IsNullOrWhiteSpace(textBox1.Text))
             {
                 MessageBox.Show("Please insert user name and password in correct way", "Error",
@@ -105,7 +105,7 @@ namespace taskManager
                 {
                     this.Close();
                     SignUp_Form frm = new SignUp_Form();
-                    frm.Show();  
+                    frm.Show();
                 }
 
             }
@@ -119,6 +119,11 @@ namespace taskManager
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void longin_form_Load(object sender, EventArgs e)
         {
 
         }
