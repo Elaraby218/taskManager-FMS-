@@ -7,10 +7,18 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>bin\Debug\net8.0-windows\resources\checklist.ico</ApplicationIcon>
+    <PackageIcon>checklist.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Include="bin\Debug\net8.0-windows\resources\checklist.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net8.0-windows\resources\checklist.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

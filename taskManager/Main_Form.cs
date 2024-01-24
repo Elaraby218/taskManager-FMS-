@@ -315,7 +315,17 @@ namespace taskManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized; 
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Search_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

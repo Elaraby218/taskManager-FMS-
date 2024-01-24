@@ -46,7 +46,6 @@
             user_name_lbl = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            textBox1 = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -55,6 +54,7 @@
             notachievedtasks_lbl = new Label();
             panel3 = new Panel();
             button1 = new Button();
+            Search_btn = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -105,6 +105,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(24, 30, 54);
+            panel1.Controls.Add(Search_btn);
             panel1.Controls.Add(highlightpnl);
             panel1.Controls.Add(Log_out_btn);
             panel1.Controls.Add(NotCompletedTasks_btn);
@@ -289,19 +290,6 @@
             label1.TabIndex = 3;
             label1.Text = "In Progress ";
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(74, 79, 99);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = SystemColors.ScrollBar;
-            textBox1.Location = new Point(1286, 24);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(292, 22);
-            textBox1.TabIndex = 7;
-            textBox1.Tag = "";
-            textBox1.Text = "Search for task";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -373,7 +361,7 @@
             panel3.Controls.Add(button1);
             panel3.Location = new Point(226, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1352, 26);
+            panel3.Size = new Size(1352, 42);
             panel3.TabIndex = 8;
             panel3.MouseDown += panel3_MouseDown;
             panel3.MouseMove += panel3_MouseMove;
@@ -384,12 +372,28 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1319, 0);
+            button1.Location = new Point(1290, 3);
             button1.Name = "button1";
-            button1.Size = new Size(25, 23);
+            button1.Size = new Size(59, 32);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // Search_btn
+            // 
+            Search_btn.FlatAppearance.BorderSize = 0;
+            Search_btn.FlatStyle = FlatStyle.Flat;
+            Search_btn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            Search_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            Search_btn.Image = (Image)resources.GetObject("Search_btn.Image");
+            Search_btn.Location = new Point(-3, 502);
+            Search_btn.Name = "Search_btn";
+            Search_btn.Size = new Size(226, 45);
+            Search_btn.TabIndex = 3;
+            Search_btn.Text = "Search for a task";
+            Search_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
+            Search_btn.UseVisualStyleBackColor = true;
+            Search_btn.Click += Search_btn_Click;
             // 
             // Main_Form
             // 
@@ -398,7 +402,6 @@
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1579, 785);
             Controls.Add(panel3);
-            Controls.Add(textBox1);
             Controls.Add(notachievedtasks_lbl);
             Controls.Add(taskackieved_lbl);
             Controls.Add(inprogress_lbl);
@@ -443,7 +446,6 @@
         private Button Add_new_task_btn;
         private Panel highlightpnl;
         private Label label1;
-        private TextBox textBox1;
         private Label label2;
         private Button NotCompletedTasks_btn;
         private Label label3;
@@ -453,5 +455,6 @@
         private Label notachievedtasks_lbl;
         private Panel panel3;
         private Button button1;
+        private Button Search_btn;
     }
 }
