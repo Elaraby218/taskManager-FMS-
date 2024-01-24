@@ -79,26 +79,30 @@ namespace taskManager
 
         private void Add_task_btn_Click(object sender, EventArgs e)
         {
-            // add new task to database 
-            Task_Table newTask = new Task_Table();
-            Task_Table CurTask = new Task_Table();
-            newTask.Done = false;
-            newTask.Task_Title = TaskTitle_txtbx.Text;
-            newTask.Task_describtion = TaskDesc_txtbx.Text;
-            newTask.Date_start = From.Text.ToString();
-            newTask.Date_end = Date_end.Text.ToString();
-            newTask.Time_Needed = TimeInH_txtbx.Text;
-            newTask.Priority = Priority.Value;
-            newTask.UserId = CurUserr.UserId;
-            CurTask = ManageDatabase.AddTask(newTask);
-            // add this task to the priority queue 
-            // ManageTasks.UserTaskView(CurTask);
+            if (ValidationMethods.ValidTask(TaskTitle_txtbx.Text, TaskDesc_txtbx.Text,
+                                                   From.Text.ToString(), Date_end.Text.ToString(), TimeInH_txtbx.Text))
+            {
+                // add new task to database 
+                Task_Table newTask = new Task_Table();
+                Task_Table CurTask = new Task_Table();
+                newTask.Done = false;
+                newTask.Task_Title = TaskTitle_txtbx.Text;
+                newTask.Task_describtion = TaskDesc_txtbx.Text;
+                newTask.Date_start = From.Text.ToString();
+                newTask.Date_end = Date_end.Text.ToString();
+                newTask.Time_Needed = TimeInH_txtbx.Text;
+                newTask.Priority = Priority.Value;
+                newTask.UserId = CurUserr.UserId;
+                CurTask = ManageDatabase.AddTask(newTask);
+                // add this task to the priority queue 
+                // ManageTasks.UserTaskView(CurTask);
 
-            ManageDatabase.GetUserTasks(CurUserr.UserId);
-            ManageTasks.ViewTasks(MAIN_FORM);
-            MessageBox.Show("Task added");
-            this.Close();
-            // list tasks in the panel after sort it based on Date of start then priotity of the task 
+                ManageDatabase.GetUserTasks(CurUserr.UserId);
+                ManageTasks.ViewTasks(MAIN_FORM);
+                MessageBox.Show("Task added");
+                this.Close();
+                // list tasks in the panel after sort it based on Date of start then priotity of the task 
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -110,6 +114,8 @@ namespace taskManager
         {
 
         }
+
+
 
         private void reset_btn_Click(object sender, EventArgs e)
         {
@@ -149,6 +155,54 @@ namespace taskManager
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TaskTitle_txtbx_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
+            if ((e.KeyChar == '\b' || e.KeyChar == ' ' || char.IsUpper(e.KeyChar) || char.IsDigit(e.KeyChar) || char.IsLower(e.KeyChar)))
+            {
+
+                if ((TaskTitle_txtbx.Text.Length >= 20) && e.KeyChar != '\b')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    return;
+
+                }
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TimeInH_txtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\b' || char.IsDigit(e.KeyChar))
+            {
+
+                if ((TimeInH_txtbx.Text.Length >= 3) && e.KeyChar != '\b')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    return;
+
+                }
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TimeInH_txtbx_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

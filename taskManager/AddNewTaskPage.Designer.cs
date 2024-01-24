@@ -144,7 +144,7 @@
             Dicard_changes_btn.FlatStyle = FlatStyle.Flat;
             Dicard_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             Dicard_changes_btn.ForeColor = Color.FromArgb(0, 126, 249);
-            Dicard_changes_btn.Location = new Point(189, 15);
+            Dicard_changes_btn.Location = new Point(189, 16);
             Dicard_changes_btn.Name = "Dicard_changes_btn";
             Dicard_changes_btn.Size = new Size(156, 39);
             Dicard_changes_btn.TabIndex = 22;
@@ -245,6 +245,8 @@
             TimeInH_txtbx.Size = new Size(318, 39);
             TimeInH_txtbx.TabIndex = 4;
             TimeInH_txtbx.TextAlign = HorizontalAlignment.Center;
+            TimeInH_txtbx.TextChanged += TimeInH_txtbx_TextChanged;
+            TimeInH_txtbx.KeyPress += TimeInH_txtbx_KeyPress;
             // 
             // groupBox4
             // 
@@ -372,6 +374,7 @@
             TaskTitle_txtbx.TabIndex = 0;
             TaskTitle_txtbx.TextAlign = HorizontalAlignment.Center;
             TaskTitle_txtbx.TextChanged += TaskTitle_txtbx_TextChanged;
+            TaskTitle_txtbx.KeyPress += TaskTitle_txtbx_KeyPress_1;
             // 
             // sqlCommand1
             // 

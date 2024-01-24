@@ -113,5 +113,30 @@ namespace taskManager.functions_class
             return flag;
         }
 
+        public static bool ValidTask(string tasktitle , string taskdescribtion, string start , string end , string timeH)
+        {
+            int comp = start.CompareTo(end);
+            if(String.IsNullOrEmpty(tasktitle)) {
+                MessageBox.Show("Task Title connot be empty" , "Error" , MessageBoxButtons.OK , MessageBoxIcon.Error);
+                return false;
+            }
+            else if (tasktitle[0]==' ')
+            {
+                MessageBox.Show("First letter of the title cannot be space ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (String.IsNullOrEmpty(taskdescribtion))
+            {
+                MessageBox.Show("Task describtion connot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (string.Compare(end, start) < 0)
+            {
+                MessageBox.Show("End date must be greater than or equal to start date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
     }
 }

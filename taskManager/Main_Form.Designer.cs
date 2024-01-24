@@ -53,9 +53,12 @@
             inprogress_lbl = new Label();
             taskackieved_lbl = new Label();
             notachievedtasks_lbl = new Label();
+            panel3 = new Panel();
+            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // Tasks_Not_started
@@ -292,7 +295,7 @@
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox1.ForeColor = SystemColors.ScrollBar;
-            textBox1.Location = new Point(1277, 12);
+            textBox1.Location = new Point(1286, 24);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(292, 22);
             textBox1.TabIndex = 7;
@@ -365,12 +368,35 @@
             notachievedtasks_lbl.TabIndex = 3;
             notachievedtasks_lbl.Text = "Tasks Not Achieved";
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(button1);
+            panel3.Location = new Point(226, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1352, 26);
+            panel3.TabIndex = 8;
+            panel3.MouseDown += panel3_MouseDown;
+            panel3.MouseMove += panel3_MouseMove;
+            panel3.MouseUp += panel3_MouseUp;
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(1324, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(25, 23);
+            button1.TabIndex = 0;
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1579, 785);
+            Controls.Add(panel3);
             Controls.Add(textBox1);
             Controls.Add(notachievedtasks_lbl);
             Controls.Add(taskackieved_lbl);
@@ -393,6 +419,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -423,5 +450,7 @@
         private Label inprogress_lbl;
         private Label taskackieved_lbl;
         private Label notachievedtasks_lbl;
+        private Panel panel3;
+        private Button button1;
     }
 }

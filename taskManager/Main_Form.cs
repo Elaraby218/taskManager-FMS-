@@ -32,10 +32,11 @@ namespace taskManager
 
 
         UserTable CurUser;
+
         public Main_Form(UserTable current_user)
         {
             InitializeComponent();
-        
+
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             CurUser = current_user;
             ManageTasks.ViewTasks(this);
@@ -54,7 +55,7 @@ namespace taskManager
         public Main_Form()
         {
             InitializeComponent();
-             
+
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             this.highlightpnl.Height = dashboardbtn.Height;
             this.highlightpnl.Top = dashboardbtn.Top;
@@ -64,7 +65,7 @@ namespace taskManager
 
         }
 
-       
+
 
         private void Main_Form_Load(object sender, EventArgs e)
         {
@@ -282,6 +283,34 @@ namespace taskManager
         private void NotStartedTasks_btn_Leave(object sender, EventArgs e)
         {
             NotStartedTasks_btn.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        bool mouseDown;
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+        }
+
+        private void panel3_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                int mouserx = MousePosition.X - 400;
+                int mousery = MousePosition.Y - 20;
+                this.SetDesktopLocation(mouserx, mousery);
+            }
+        }
+
+        private void panel3_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }

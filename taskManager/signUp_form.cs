@@ -118,5 +118,10 @@ namespace taskManager
                 e.Handled = true;
             }
         }
+
+        private void Phone_txtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

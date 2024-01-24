@@ -146,6 +146,7 @@
             Phone_txtbox.Size = new Size(323, 40);
             Phone_txtbox.TabIndex = 9;
             Phone_txtbox.TextAlign = HorizontalAlignment.Center;
+            Phone_txtbox.TextChanged += Phone_txtbox_TextChanged;
             Phone_txtbox.KeyPress += Phone_txtbox_KeyPress;
             // 
             // Email_txtbox
