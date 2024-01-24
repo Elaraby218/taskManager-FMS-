@@ -74,6 +74,7 @@ namespace taskManager
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
+           
             if (String.IsNullOrWhiteSpace(textBox2.Text) || String.IsNullOrWhiteSpace(textBox1.Text))
             {
                 MessageBox.Show("Please insert user name and password in correct way", "Error",
@@ -84,6 +85,8 @@ namespace taskManager
                 ManageDatabase.LoginUser(textBox2.Text, ManageDatabase.HashPassword(textBox1.Text));
             if (current_user != null)
             {
+                textBox1.Text = string.Empty;
+                textBox2.Text = string.Empty;
                 MessageBox.Show($"Wellcome {current_user.Name}", "Done",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ManageDatabase.GetUserTasks(current_user.UserId);
@@ -102,9 +105,7 @@ namespace taskManager
                 {
                     this.Close();
                     SignUp_Form frm = new SignUp_Form();
-                    Transition.FadeOut(frm);
-                    frm.Show();
-                    Transition.FadeIn(frm);
+                    frm.Show();  
                 }
 
             }
