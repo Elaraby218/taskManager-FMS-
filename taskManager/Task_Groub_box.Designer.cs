@@ -237,16 +237,16 @@
 
         #endregion
 
-        private GroupBox Task_gbx;
-        private Label Task_Name_lbl;
+        public GroupBox Task_gbx;
+        public Label Task_Name_lbl;
         public TextBox Task_ID_txtbox;
-        private Label Task_ID_lbl;
-        private TextBox Task_title_txtbox;
+        public Label Task_ID_lbl;
+        public TextBox Task_title_txtbox;
         public Button Edit_btn;
-        private TextBox End_txtbox;
-        private Label To_lbl;
-        private TextBox Start_txtbox;
-        private Label From_lbl;
+        public TextBox End_txtbox;
+        public Label To_lbl;
+        public TextBox Start_txtbox;
+        public Label From_lbl;
         public Button More_btn;
         public Button Delete_btn;
         public CheckBox Done_chkbx;

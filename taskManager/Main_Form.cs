@@ -41,13 +41,19 @@ namespace taskManager
             CurUser = current_user;
             ManageTasks.ViewTasks(this);
             AddNewTaskForm.initizeVluse(this, current_user);
-            this.highlightpnl.Height = dashboardbtn.Height;
-            this.highlightpnl.Top = dashboardbtn.Top;
-            this.highlightpnl.Left = dashboardbtn.Left;
-            this.dashboardbtn.BackColor = Color.FromArgb(46, 51, 73);
+            highlightpnl.Height = dashboardbtn.Height;
+            highlightpnl.Top = dashboardbtn.Top;
+            highlightpnl.Left = dashboardbtn.Left;
+
             inprogress_lbl.Hide();
             taskackieved_lbl.Hide();
             notachievedtasks_lbl.Hide();
+            search_pnl.Hide();
+            search_pnl1.Hide();
+
+
+
+
         }
 
 
@@ -57,11 +63,14 @@ namespace taskManager
             InitializeComponent();
 
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
-            this.highlightpnl.Height = dashboardbtn.Height;
-            this.highlightpnl.Top = dashboardbtn.Top;
-            this.highlightpnl.Left = dashboardbtn.Left;
-            this.dashboardbtn.BackColor = Color.FromArgb(46, 51, 73);
+            highlightpnl.Height = dashboardbtn.Height;
+            highlightpnl.Top = dashboardbtn.Top;
+            highlightpnl.Left = dashboardbtn.Left;
+
             inprogress_lbl.Hide();
+            search_pnl.Hide();
+            search_pnl1.Hide();
+
 
         }
 
@@ -111,7 +120,7 @@ namespace taskManager
             In_Progress_Tasks.Show();
             Completed_tasks.Show();
             Not_completed_tasks.Show();
-            user_name_lbl.Show();
+
             label1.Show();
             label2.Show();
             label3.Show();
@@ -119,6 +128,10 @@ namespace taskManager
             inprogress_lbl.Hide();
             taskackieved_lbl.Hide();
             notachievedtasks_lbl.Hide();
+            search_pnl.Hide();
+            search_pnl1.Hide();
+            highlightpnl.Show();
+
 
         }
 
@@ -148,6 +161,8 @@ namespace taskManager
             ntp.reset_btn.Enabled = true;
             ntp.Location = new Point(226, 94);
             ntp.ShowDialog();
+            highlightpnl.Show();
+
         }
 
         private void dashboardbtn_Leave(object sender, EventArgs e)
@@ -183,9 +198,13 @@ namespace taskManager
             taskackieved_lbl.Hide();
             inprogress_lbl.Hide();
             notachievedtasks_lbl.Hide();
+            search_pnl.Hide();
+            search_pnl1.Hide();
 
             Tasks_Not_started.Size = new Size(1341, 682);
             Tasks_Not_started.Location = new Point(226, 94);
+            highlightpnl.Show();
+
 
         }
 
@@ -196,12 +215,13 @@ namespace taskManager
             this.highlightpnl.Left = InProgressTask_btn.Left;
             this.InProgressTask_btn.BackColor = Color.FromArgb(46, 51, 73);
 
+            highlightpnl.Show();
 
             Tasks_Not_started.Hide();
             In_Progress_Tasks.Show();
             Completed_tasks.Hide();
             Not_completed_tasks.Hide();
-            user_name_lbl.Hide();
+
             label1.Hide();
             label2.Hide();
             label3.Hide();
@@ -209,6 +229,8 @@ namespace taskManager
             inprogress_lbl.Show();
             taskackieved_lbl.Hide();
             notachievedtasks_lbl.Hide();
+            search_pnl.Hide();
+            search_pnl1.Hide();
 
             In_Progress_Tasks.Size = new Size(1341, 682);
             In_Progress_Tasks.Location = new Point(226, 94);
@@ -230,7 +252,7 @@ namespace taskManager
             In_Progress_Tasks.Hide();
             Completed_tasks.Show();
             Not_completed_tasks.Hide();
-            user_name_lbl.Hide();
+
             label1.Hide();
             label2.Hide();
             label3.Hide();
@@ -238,7 +260,10 @@ namespace taskManager
             inprogress_lbl.Hide();
             taskackieved_lbl.Show();
             notachievedtasks_lbl.Hide();
+            search_pnl.Hide();
+            search_pnl1.Hide();
 
+            highlightpnl.Show();
 
             Completed_tasks.Size = new Size(1341, 682);
             Completed_tasks.Location = new Point(226, 94);
@@ -256,12 +281,13 @@ namespace taskManager
             this.highlightpnl.Left = NotCompletedTasks_btn.Left;
             this.NotCompletedTasks_btn.BackColor = Color.FromArgb(46, 51, 73);
 
+            highlightpnl.Show();
 
             Tasks_Not_started.Hide();
             In_Progress_Tasks.Hide();
             Completed_tasks.Hide();
             Not_completed_tasks.Show();
-            user_name_lbl.Hide();
+
             label1.Hide();
             label2.Hide();
             label3.Hide();
@@ -269,6 +295,8 @@ namespace taskManager
             inprogress_lbl.Hide();
             taskackieved_lbl.Hide();
             notachievedtasks_lbl.Show();
+            search_pnl.Hide();
+            search_pnl1.Hide();
 
 
             Not_completed_tasks.Size = new Size(1341, 682);
@@ -323,10 +351,135 @@ namespace taskManager
 
         }
 
-        private void Search_btn_Click(object sender, EventArgs e)
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+
+            this.search_btn.BackColor = Color.FromArgb(46, 51, 73);
+            this.highlightpnl.Height = search_btn.Height;
+            this.highlightpnl.Top = search_btn.Top;
+            this.highlightpnl.Left = search_btn.Left;
+            this.search_btn.BackColor = Color.FromArgb(46, 51, 73);
+            highlightpnl.Show();
+            Tasks_Not_started.Hide();
+            In_Progress_Tasks.Hide();
+            Completed_tasks.Hide();
+            Not_completed_tasks.Hide();
+
+            label1.Hide();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+            inprogress_lbl.Hide();
+            taskackieved_lbl.Hide();
+            notachievedtasks_lbl.Hide();
+
+            search_pnl1.Show();
+            search_pnl.Show();
+
+            Date_gbx.Hide();
+            textBox1.Hide();
+
+
+
+
+        }
+
+        private void search_btn_Leave(object sender, EventArgs e)
+        {
+            search_btn.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void search_pnl1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+
+                textBox1.Show();
+            }
+            else
+            {
+                textBox1.Hide();
+
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                Date_gbx.Show();
+            }
+            else
+            {
+                Date_gbx.Hide();
+            }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            search_pnl.Controls.Clear();
+            
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+            if (radioButton1.Checked)
+            {
+                string taskname = textBox1.Text;
+                if (NS_chb.Checked)
+                {
+                    foreach (var tsk in ManageTasks.NotStartedTasks)
+                    {
+                        if (tsk.Task_Title == taskname)
+                        {
+                            Task_Groub_box t = new Task_Groub_box(tsk.Task_Title, tsk.TaskId.ToString(),
+                                                               tsk.Date_start.ToString(), tsk.Date_end.ToString());
+                            search_pnl.Controls.Add(t);
+                        }
+                    }
+                }
+
+                if (S_chb.Checked)
+                {
+                    foreach (Task_Groub_box tsk in In_Progress_Tasks.Controls)
+                    {
+                        if (tsk.Task_title_txtbox.Text == taskname)
+                        {
+                            search_pnl.Controls.Add(tsk);
+                        }
+                    }
+                }
+
+                if (Acieved_chb.Checked)
+                {
+                    foreach (Task_Groub_box tsk in Completed_tasks.Controls)
+                    {
+                        if (tsk.Task_title_txtbox.Text == taskname)
+                        {
+                            search_pnl.Controls.Add(tsk);
+                        }
+                    }
+                }
+
+                if (Not_Achieved_chb.Checked)
+                {
+                    foreach (Task_Groub_box tsk in Not_completed_tasks.Controls)
+                    {
+                        if (tsk.Task_title_txtbox.Text == taskname)
+                        {
+                            search_pnl.Controls.Add(tsk);
+                        }
+                    }
+                }
+            }
+        }
+
+       
     }
 }
 

@@ -34,6 +34,8 @@
             Completed_tasks = new FlowLayoutPanel();
             Not_completed_tasks = new FlowLayoutPanel();
             panel1 = new Panel();
+            search_btn = new Button();
+            Search_panel = new FlowLayoutPanel();
             highlightpnl = new Panel();
             Log_out_btn = new Button();
             NotCompletedTasks_btn = new Button();
@@ -54,11 +56,32 @@
             notachievedtasks_lbl = new Label();
             panel3 = new Panel();
             button1 = new Button();
-            Search_btn = new Button();
+            search_pnl = new FlowLayoutPanel();
+            search_pnl1 = new Panel();
+            button3 = new Button();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
+            Date_gbx = new GroupBox();
+            checkBox3 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox1 = new CheckBox();
+            dateTimePicker1 = new DateTimePicker();
+            label9 = new Label();
+            label8 = new Label();
+            textBox1 = new TextBox();
+            Not_Achieved_chb = new CheckBox();
+            Acieved_chb = new CheckBox();
+            S_chb = new CheckBox();
+            NS_chb = new CheckBox();
+            label6 = new Label();
+            label5 = new Label();
+            button2 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
+            search_pnl1.SuspendLayout();
+            Date_gbx.SuspendLayout();
             SuspendLayout();
             // 
             // Tasks_Not_started
@@ -68,7 +91,7 @@
             Tasks_Not_started.BorderStyle = BorderStyle.FixedSingle;
             Tasks_Not_started.Location = new Point(226, 94);
             Tasks_Not_started.Name = "Tasks_Not_started";
-            Tasks_Not_started.Size = new Size(444, 682);
+            Tasks_Not_started.Size = new Size(444, 679);
             Tasks_Not_started.TabIndex = 0;
             Tasks_Not_started.Paint += Tasks_Not_started_Paint;
             // 
@@ -79,7 +102,7 @@
             In_Progress_Tasks.BorderStyle = BorderStyle.FixedSingle;
             In_Progress_Tasks.Location = new Point(676, 94);
             In_Progress_Tasks.Name = "In_Progress_Tasks";
-            In_Progress_Tasks.Size = new Size(444, 682);
+            In_Progress_Tasks.Size = new Size(444, 669);
             In_Progress_Tasks.TabIndex = 1;
             // 
             // Completed_tasks
@@ -105,7 +128,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(24, 30, 54);
-            panel1.Controls.Add(Search_btn);
+            panel1.Controls.Add(search_btn);
+            panel1.Controls.Add(Search_panel);
             panel1.Controls.Add(highlightpnl);
             panel1.Controls.Add(Log_out_btn);
             panel1.Controls.Add(NotCompletedTasks_btn);
@@ -120,6 +144,30 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(220, 785);
             panel1.TabIndex = 6;
+            // 
+            // search_btn
+            // 
+            search_btn.FlatAppearance.BorderSize = 0;
+            search_btn.FlatStyle = FlatStyle.Flat;
+            search_btn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            search_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            search_btn.Image = (Image)resources.GetObject("search_btn.Image");
+            search_btn.Location = new Point(-3, 502);
+            search_btn.Name = "search_btn";
+            search_btn.Size = new Size(229, 44);
+            search_btn.TabIndex = 10;
+            search_btn.Text = "Search for a task";
+            search_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
+            search_btn.UseVisualStyleBackColor = true;
+            search_btn.Click += search_btn_Click;
+            search_btn.Leave += search_btn_Leave;
+            // 
+            // Search_panel
+            // 
+            Search_panel.Location = new Point(223, 270);
+            Search_panel.Name = "Search_panel";
+            Search_panel.Size = new Size(1299, 493);
+            Search_panel.TabIndex = 9;
             // 
             // highlightpnl
             // 
@@ -155,7 +203,7 @@
             NotCompletedTasks_btn.Image = (Image)resources.GetObject("NotCompletedTasks_btn.Image");
             NotCompletedTasks_btn.Location = new Point(3, 442);
             NotCompletedTasks_btn.Name = "NotCompletedTasks_btn";
-            NotCompletedTasks_btn.Size = new Size(214, 54);
+            NotCompletedTasks_btn.Size = new Size(217, 54);
             NotCompletedTasks_btn.TabIndex = 1;
             NotCompletedTasks_btn.Text = "Tasks Not Achieved";
             NotCompletedTasks_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -172,7 +220,7 @@
             CompleteTasks_btn.Image = (Image)resources.GetObject("CompleteTasks_btn.Image");
             CompleteTasks_btn.Location = new Point(3, 382);
             CompleteTasks_btn.Name = "CompleteTasks_btn";
-            CompleteTasks_btn.Size = new Size(214, 54);
+            CompleteTasks_btn.Size = new Size(217, 54);
             CompleteTasks_btn.TabIndex = 1;
             CompleteTasks_btn.Text = "Tasks Achieved";
             CompleteTasks_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -189,7 +237,7 @@
             InProgressTask_btn.Image = (Image)resources.GetObject("InProgressTask_btn.Image");
             InProgressTask_btn.Location = new Point(0, 322);
             InProgressTask_btn.Name = "InProgressTask_btn";
-            InProgressTask_btn.Size = new Size(226, 54);
+            InProgressTask_btn.Size = new Size(234, 54);
             InProgressTask_btn.TabIndex = 1;
             InProgressTask_btn.Text = "In Progress";
             InProgressTask_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -206,7 +254,7 @@
             NotStartedTasks_btn.Image = (Image)resources.GetObject("NotStartedTasks_btn.Image");
             NotStartedTasks_btn.Location = new Point(3, 270);
             NotStartedTasks_btn.Name = "NotStartedTasks_btn";
-            NotStartedTasks_btn.Size = new Size(223, 54);
+            NotStartedTasks_btn.Size = new Size(231, 54);
             NotStartedTasks_btn.TabIndex = 1;
             NotStartedTasks_btn.Text = "Not Started";
             NotStartedTasks_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -223,7 +271,7 @@
             Add_new_task_btn.Image = (Image)resources.GetObject("Add_new_task_btn.Image");
             Add_new_task_btn.Location = new Point(6, 210);
             Add_new_task_btn.Name = "Add_new_task_btn";
-            Add_new_task_btn.Size = new Size(211, 54);
+            Add_new_task_btn.Size = new Size(220, 54);
             Add_new_task_btn.TabIndex = 1;
             Add_new_task_btn.Text = "Add New Task";
             Add_new_task_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -238,9 +286,9 @@
             dashboardbtn.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dashboardbtn.ForeColor = Color.FromArgb(0, 126, 249);
             dashboardbtn.Image = Properties.Resources.home;
-            dashboardbtn.Location = new Point(9, 150);
+            dashboardbtn.Location = new Point(3, 150);
             dashboardbtn.Name = "dashboardbtn";
-            dashboardbtn.Size = new Size(214, 54);
+            dashboardbtn.Size = new Size(231, 54);
             dashboardbtn.TabIndex = 1;
             dashboardbtn.Text = "Dashboard";
             dashboardbtn.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -379,21 +427,247 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // Search_btn
+            // search_pnl
             // 
-            Search_btn.FlatAppearance.BorderSize = 0;
-            Search_btn.FlatStyle = FlatStyle.Flat;
-            Search_btn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            Search_btn.ForeColor = Color.FromArgb(0, 126, 249);
-            Search_btn.Image = (Image)resources.GetObject("Search_btn.Image");
-            Search_btn.Location = new Point(-3, 502);
-            Search_btn.Name = "Search_btn";
-            Search_btn.Size = new Size(226, 45);
-            Search_btn.TabIndex = 3;
-            Search_btn.Text = "Search for a task";
-            Search_btn.TextImageRelation = TextImageRelation.TextBeforeImage;
-            Search_btn.UseVisualStyleBackColor = true;
-            Search_btn.Click += Search_btn_Click;
+            search_pnl.AutoScroll = true;
+            search_pnl.BackColor = Color.FromArgb(37, 42, 64);
+            search_pnl.Location = new Point(226, 288);
+            search_pnl.Name = "search_pnl";
+            search_pnl.Size = new Size(1341, 485);
+            search_pnl.TabIndex = 9;
+            // 
+            // search_pnl1
+            // 
+            search_pnl1.BackColor = Color.FromArgb(37, 42, 64);
+            search_pnl1.Controls.Add(button3);
+            search_pnl1.Controls.Add(radioButton2);
+            search_pnl1.Controls.Add(radioButton1);
+            search_pnl1.Controls.Add(Date_gbx);
+            search_pnl1.Controls.Add(textBox1);
+            search_pnl1.Controls.Add(Not_Achieved_chb);
+            search_pnl1.Controls.Add(Acieved_chb);
+            search_pnl1.Controls.Add(S_chb);
+            search_pnl1.Controls.Add(NS_chb);
+            search_pnl1.Controls.Add(label6);
+            search_pnl1.Controls.Add(label5);
+            search_pnl1.Controls.Add(button2);
+            search_pnl1.Location = new Point(226, 49);
+            search_pnl1.Name = "search_pnl1";
+            search_pnl1.Size = new Size(1341, 233);
+            search_pnl1.TabIndex = 10;
+            // 
+            // button3
+            // 
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            button3.ForeColor = Color.FromArgb(0, 126, 249);
+            button3.Location = new Point(728, 182);
+            button3.Name = "button3";
+            button3.Size = new Size(126, 33);
+            button3.TabIndex = 7;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            radioButton2.ForeColor = Color.FromArgb(0, 126, 249);
+            radioButton2.Location = new Point(319, 51);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(60, 24);
+            radioButton2.TabIndex = 6;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Date";
+            radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            radioButton1.ForeColor = Color.FromArgb(0, 126, 249);
+            radioButton1.Location = new Point(319, 21);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(69, 24);
+            radioButton1.TabIndex = 6;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Name";
+            radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+            // 
+            // Date_gbx
+            // 
+            Date_gbx.Controls.Add(checkBox3);
+            Date_gbx.Controls.Add(checkBox2);
+            Date_gbx.Controls.Add(checkBox1);
+            Date_gbx.Controls.Add(dateTimePicker1);
+            Date_gbx.Controls.Add(label9);
+            Date_gbx.Controls.Add(label8);
+            Date_gbx.FlatStyle = FlatStyle.Flat;
+            Date_gbx.ForeColor = SystemColors.ControlLightLight;
+            Date_gbx.Location = new Point(385, 34);
+            Date_gbx.Name = "Date_gbx";
+            Date_gbx.Size = new Size(822, 121);
+            Date_gbx.TabIndex = 5;
+            Date_gbx.TabStop = false;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            checkBox3.ForeColor = Color.FromArgb(0, 126, 249);
+            checkBox3.Location = new Point(462, 78);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(46, 24);
+            checkBox3.TabIndex = 4;
+            checkBox3.Text = "on";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            checkBox2.ForeColor = Color.FromArgb(0, 126, 249);
+            checkBox2.Location = new Point(462, 48);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(74, 24);
+            checkBox2.TabIndex = 4;
+            checkBox2.Text = "before";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            checkBox1.ForeColor = Color.FromArgb(0, 126, 249);
+            checkBox1.Location = new Point(462, 18);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(62, 24);
+            checkBox1.TabIndex = 4;
+            checkBox1.Text = "after";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(137, 19);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 3;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label9.ForeColor = Color.FromArgb(0, 126, 249);
+            label9.Location = new Point(343, 19);
+            label9.Name = "label9";
+            label9.Size = new Size(278, 20);
+            label9.TabIndex = 2;
+            label9.Text = "You need tasks                          this date";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label8.ForeColor = Color.FromArgb(0, 126, 249);
+            label8.Location = new Point(6, 19);
+            label8.Name = "label8";
+            label8.Size = new Size(134, 20);
+            label8.TabIndex = 2;
+            label8.Text = "Choose the date : ";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(394, 22);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Enter the name of the task";
+            textBox1.Size = new Size(266, 23);
+            textBox1.TabIndex = 3;
+            // 
+            // Not_Achieved_chb
+            // 
+            Not_Achieved_chb.AutoSize = true;
+            Not_Achieved_chb.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            Not_Achieved_chb.ForeColor = Color.FromArgb(0, 126, 249);
+            Not_Achieved_chb.Location = new Point(115, 109);
+            Not_Achieved_chb.Name = "Not_Achieved_chb";
+            Not_Achieved_chb.Size = new Size(158, 24);
+            Not_Achieved_chb.TabIndex = 2;
+            Not_Achieved_chb.Text = "Not Achieved Task";
+            Not_Achieved_chb.UseVisualStyleBackColor = true;
+            // 
+            // Acieved_chb
+            // 
+            Acieved_chb.AutoSize = true;
+            Acieved_chb.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            Acieved_chb.ForeColor = Color.FromArgb(0, 126, 249);
+            Acieved_chb.Location = new Point(115, 79);
+            Acieved_chb.Name = "Acieved_chb";
+            Acieved_chb.Size = new Size(127, 24);
+            Acieved_chb.TabIndex = 2;
+            Acieved_chb.Text = "Achieved Task";
+            Acieved_chb.UseVisualStyleBackColor = true;
+            // 
+            // S_chb
+            // 
+            S_chb.AutoSize = true;
+            S_chb.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            S_chb.ForeColor = Color.FromArgb(0, 126, 249);
+            S_chb.Location = new Point(115, 49);
+            S_chb.Name = "S_chb";
+            S_chb.Size = new Size(142, 24);
+            S_chb.TabIndex = 2;
+            S_chb.Text = "In progress Task";
+            S_chb.UseVisualStyleBackColor = true;
+            // 
+            // NS_chb
+            // 
+            NS_chb.AutoSize = true;
+            NS_chb.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            NS_chb.ForeColor = Color.FromArgb(0, 126, 249);
+            NS_chb.Location = new Point(115, 19);
+            NS_chb.Name = "NS_chb";
+            NS_chb.Size = new Size(144, 24);
+            NS_chb.TabIndex = 2;
+            NS_chb.Text = "Not started Task";
+            NS_chb.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label6.ForeColor = Color.FromArgb(0, 126, 249);
+            label6.Location = new Point(283, 19);
+            label6.Name = "label6";
+            label6.Size = new Size(27, 20);
+            label6.TabIndex = 1;
+            label6.Text = "By";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label5.ForeColor = Color.FromArgb(0, 126, 249);
+            label5.Location = new Point(29, 17);
+            label5.Name = "label5";
+            label5.Size = new Size(80, 20);
+            label5.TabIndex = 1;
+            label5.Text = "Search for";
+            // 
+            // button2
+            // 
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            button2.ForeColor = Color.FromArgb(0, 126, 249);
+            button2.Location = new Point(564, 182);
+            button2.Name = "button2";
+            button2.Size = new Size(126, 33);
+            button2.TabIndex = 0;
+            button2.Text = "Search";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Main_Form
             // 
@@ -401,6 +675,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1579, 785);
+            Controls.Add(search_pnl1);
+            Controls.Add(search_pnl);
             Controls.Add(panel3);
             Controls.Add(notachievedtasks_lbl);
             Controls.Add(taskackieved_lbl);
@@ -424,6 +700,10 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
+            search_pnl1.ResumeLayout(false);
+            search_pnl1.PerformLayout();
+            Date_gbx.ResumeLayout(false);
+            Date_gbx.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -455,6 +735,27 @@
         private Label notachievedtasks_lbl;
         private Panel panel3;
         private Button button1;
-        private Button Search_btn;
+        private FlowLayoutPanel Search_panel;
+        private FlowLayoutPanel search_pnl;
+        private Button search_btn;
+        private Panel search_pnl1;
+        private Button button2;
+        private Label label5;
+        private Label label6;
+        private CheckBox Not_Achieved_chb;
+        private CheckBox Acieved_chb;
+        private CheckBox S_chb;
+        private CheckBox NS_chb;
+        private GroupBox Date_gbx;
+        private Label label8;
+        private TextBox textBox1;
+        private CheckBox checkBox3;
+        private CheckBox checkBox2;
+        private CheckBox checkBox1;
+        private DateTimePicker dateTimePicker1;
+        private Label label9;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
+        private Button button3;
     }
 }

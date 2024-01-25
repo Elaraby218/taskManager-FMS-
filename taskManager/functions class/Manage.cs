@@ -323,9 +323,7 @@ namespace taskManager.functions_class
             foreach (var task in ManageTasks.CompletedTasks) { 
                 Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
                                                               task.Date_start.ToString(), task.Date_end.ToString());
-                Task_Groub_box t2 = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
-                                                              task.Date_start.ToString(), task.Date_end.ToString());
-
+              
                 t.Edit_btn.Visible = false;
                 t.Edit_btn.Hide();
                 t.Delete_btn.Visible = false;
