@@ -422,12 +422,10 @@ namespace taskManager
         private void button3_Click(object sender, EventArgs e)
         {
             search_pnl.Controls.Clear();
-            
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
-
-
             if (radioButton1.Checked)
             {
                 string taskname = textBox1.Text;
@@ -439,47 +437,101 @@ namespace taskManager
                         {
                             Task_Groub_box t = new Task_Groub_box(tsk.Task_Title, tsk.TaskId.ToString(),
                                                                tsk.Date_start.ToString(), tsk.Date_end.ToString());
-                            search_pnl.Controls.Add(t);
+                            bool flag = true;
+                            foreach(Task_Groub_box istask in search_pnl.Controls)
+                            {
+                                if(istask.Task_title_txtbox.Text == taskname)
+                                {
+                                    flag = false;
+                                    break;
+                                }
+                            }
+                            if (flag)
+                            {
+                                search_pnl.Controls.Add(t);
+                            }
                         }
                     }
                 }
 
                 if (S_chb.Checked)
                 {
-                    foreach (Task_Groub_box tsk in In_Progress_Tasks.Controls)
+                    foreach (var tsk in ManageTasks.InProgressTasks)
                     {
-                        if (tsk.Task_title_txtbox.Text == taskname)
+                        if (tsk.Task_Title == taskname)
                         {
-                            search_pnl.Controls.Add(tsk);
+                            Task_Groub_box t = new Task_Groub_box(tsk.Task_Title, tsk.TaskId.ToString(),
+                                                                tsk.Date_start.ToString(), tsk.Date_end.ToString());
+                            bool flag = true;
+                            foreach (Task_Groub_box istask in search_pnl.Controls)
+                            {
+                                if (istask.Task_title_txtbox.Text == taskname)
+                                {
+                                    flag = false;
+                                    break;
+                                }
+                            }
+                            if (flag)
+                            {
+                                search_pnl.Controls.Add(t);
+                            }
                         }
                     }
                 }
 
                 if (Acieved_chb.Checked)
                 {
-                    foreach (Task_Groub_box tsk in Completed_tasks.Controls)
+                    foreach (var tsk in ManageTasks.CompletedTasks)
                     {
-                        if (tsk.Task_title_txtbox.Text == taskname)
+                        if (tsk.Task_Title == taskname)
                         {
-                            search_pnl.Controls.Add(tsk);
+                            Task_Groub_box t = new Task_Groub_box(tsk.Task_Title, tsk.TaskId.ToString(),
+                                                               tsk.Date_start.ToString(), tsk.Date_end.ToString());
+                            bool flag = true;
+                            foreach (Task_Groub_box istask in search_pnl.Controls)
+                            {
+                                if (istask.Task_title_txtbox.Text == taskname)
+                                {
+                                    flag = false;
+                                    break;
+                                }
+                            }
+                            if (flag)
+                            {
+                                search_pnl.Controls.Add(t);
+                            }
                         }
                     }
                 }
 
                 if (Not_Achieved_chb.Checked)
                 {
-                    foreach (Task_Groub_box tsk in Not_completed_tasks.Controls)
+                    foreach (var tsk in ManageTasks.NotCompletedTasks)
                     {
-                        if (tsk.Task_title_txtbox.Text == taskname)
+                        if (tsk.Task_Title == taskname)
                         {
-                            search_pnl.Controls.Add(tsk);
+                            Task_Groub_box t = new Task_Groub_box(tsk.Task_Title, tsk.TaskId.ToString(),
+                                                               tsk.Date_start.ToString(), tsk.Date_end.ToString());
+                            bool flag = true;
+                            foreach (Task_Groub_box istask in search_pnl.Controls)
+                            {
+                                if (istask.Task_title_txtbox.Text == taskname)
+                                {
+                                    flag = false;
+                                    break;
+                                }
+                            }
+                            if (flag)
+                            {
+                                search_pnl.Controls.Add(t);
+                            }
                         }
                     }
                 }
             }
         }
 
-       
+
     }
 }
 
