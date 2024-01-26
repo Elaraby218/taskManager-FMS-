@@ -758,6 +758,7 @@ namespace taskManager
                                 }
                             }
                         }
+
                         if (S_chb.Checked)
                         {
                             foreach (var tsk in ManageTasks.InProgressTasks)
