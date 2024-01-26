@@ -159,24 +159,22 @@ namespace taskManager.functions_class
             var tasks = from task in db.tasks where (task.UserId == id) select task;
             ManageTasks.AllTasks = tasks.ToList();
             ManageTasks.SortTasks(ManageTasks.AllTasks);
-            DateTime currentDate1 = DateTime.Now;
-            string currentDate = currentDate1.ToString("dd MMMM yyyy");
+            DateTime Noww = DateTime.Now.Date; 
 
             foreach (var task in ManageTasks.AllTasks)
             {
-                string TaskStartDate = task.Date_start;
-                int comp = TaskStartDate.CompareTo(currentDate);
-                if (comp>0)
+                DateTime taskStartDate = Convert.ToDateTime(task.Date_start).Date; 
+                DateTime taskEndDate = Convert.ToDateTime(task.Date_end).Date; 
+
+                if (taskStartDate > Noww)
                 {
                     ManageTasks.NotStartedTasks.Add(task);
                 }
                 else
                 {
-                    string TaskEndtDate = task.Date_end;
-                    comp = TaskEndtDate.CompareTo(currentDate);
-                    if (comp>=0)
+                    if (taskStartDate <= taskEndDate && Noww <= taskEndDate)
                     {
-                        if (task.Done == true)
+                        if (task.Done)
                         {
                             ManageTasks.CompletedTasks.Add(task);
                         }
@@ -196,15 +194,15 @@ namespace taskManager.functions_class
             //string notstarted1 = string.Join(", ", ManageTasks.InProgressTasks);
             //string notstarted2 = string.Join(", ", ManageTasks.CompletedTasks);
             //string notstarted3 = string.Join(", ", ManageTasks.NotCompletedTasks);
-            //MessageBox.Show($"{currentDate} \n {notstarted} \n {notstarted1} \n {notstarted2} \n {notstarted3}");
+            //MessageBox.Show($"{Noww} \n {notstarted} \n {notstarted1} \n {notstarted2} \n {notstarted3}");
 
         }
 
         public static Task_Table GetTask(int Taskid)
         {
             var task = from t in db.tasks
-                              where (t.TaskId == Taskid)
-                              select t;
+                       where (t.TaskId == Taskid)
+                       select t;
             Task_Table retTask = task.FirstOrDefault();
             return retTask;
         }
@@ -212,7 +210,7 @@ namespace taskManager.functions_class
         public static void EditTask(Task_Table curtask)
         {
 
-            var task = db.tasks.FirstOrDefault(t=>t.TaskId == curtask.TaskId);
+            var task = db.tasks.FirstOrDefault(t => t.TaskId == curtask.TaskId);
             task.Task_Title = curtask.Task_Title;
             task.Task_describtion = curtask.Task_describtion;
             task.Date_start = curtask.Date_start;
@@ -220,37 +218,37 @@ namespace taskManager.functions_class
             task.Done = curtask.Done;
             task.Time_Needed = curtask.Time_Needed;
             task.Done = curtask.Done;
-            db.SaveChanges();    
+            db.SaveChanges();
         }
 
         public static void DeleteTask(int id)
         {
-            var task = db.tasks.FirstOrDefault(x=>x.TaskId == id);
+            var task = db.tasks.FirstOrDefault(x => x.TaskId == id);
             db.tasks.Remove(task);
             db.SaveChanges();
         }
 
         public static void CkeckedTasks(Main_Form form)
         {
-            foreach(Task_Groub_box task in form.In_Progress_Tasks.Controls)
+            foreach (Task_Groub_box task in form.In_Progress_Tasks.Controls)
             {
-                
-                if(task.Done_chkbx.Checked)
+
+                if (task.Done_chkbx.Checked)
                 {
                     var dtask = db.tasks.FirstOrDefault(t => t.TaskId == int.Parse(task.Task_ID_txtbox.Text));
                     dtask.Done = true;
                 }
             }
-            db.SaveChanges ();
+            db.SaveChanges();
         }
 
     }
 
     public static class ManageSharedValues
     {
-        public static int CurrentUserId; 
-        public static Main_Form EssintionaForm ;
-       
+        public static int CurrentUserId;
+        public static Main_Form EssintionaForm;
+
     }
     public static class ManageTasks
     {
@@ -299,8 +297,8 @@ namespace taskManager.functions_class
             Frm1.In_Progress_Tasks.Controls.Clear();
             Frm1.Completed_tasks.Controls.Clear();
             Frm1.Not_completed_tasks.Controls.Clear();
-           
-           
+
+
             foreach (var task in ManageTasks.NotStartedTasks)
             {
                 Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
@@ -308,7 +306,7 @@ namespace taskManager.functions_class
                 Task_Groub_box t2 = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
                                                               task.Date_start.ToString(), task.Date_end.ToString());
                 Frm1.Tasks_Not_started.Controls.Add(t);
-              
+
             }
 
             foreach (var task in ManageTasks.InProgressTasks)
@@ -317,20 +315,21 @@ namespace taskManager.functions_class
                                                               task.Date_start.ToString(), task.Date_end.ToString());
                 t.Done_chkbx.Visible = true;
                 Frm1.In_Progress_Tasks.Controls.Add(t);
-              
+
             }
 
-            foreach (var task in ManageTasks.CompletedTasks) { 
+            foreach (var task in ManageTasks.CompletedTasks)
+            {
                 Task_Groub_box t = new Task_Groub_box(task.Task_Title, task.TaskId.ToString(),
                                                               task.Date_start.ToString(), task.Date_end.ToString());
-              
+
                 t.Edit_btn.Visible = false;
                 t.Edit_btn.Hide();
                 t.Delete_btn.Visible = false;
                 t.Delete_btn.Hide();
                 t.More_btn.Dock = DockStyle.Bottom;
                 Frm1.Completed_tasks.Controls.Add(t);
-               
+
             }
 
             foreach (var task in ManageTasks.NotCompletedTasks)
@@ -343,9 +342,9 @@ namespace taskManager.functions_class
                 t.Delete_btn.Hide();
                 t.More_btn.Dock = DockStyle.Bottom;
                 Frm1.Not_completed_tasks.Controls.Add(t);
-              
+
             }
-          
+
 
         }
 

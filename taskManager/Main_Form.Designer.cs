@@ -62,9 +62,9 @@
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
             Date_gbx = new GroupBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            oncheckbox = new CheckBox();
+            beforecheckbox = new CheckBox();
+            aftercheckbox = new CheckBox();
             dateTimePicker1 = new DateTimePicker();
             label9 = new Label();
             label8 = new Label();
@@ -76,6 +76,8 @@
             label6 = new Label();
             label5 = new Label();
             button2 = new Button();
+            startcheckbox = new CheckBox();
+            endcheckbox = new CheckBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -499,9 +501,11 @@
             // 
             // Date_gbx
             // 
-            Date_gbx.Controls.Add(checkBox3);
-            Date_gbx.Controls.Add(checkBox2);
-            Date_gbx.Controls.Add(checkBox1);
+            Date_gbx.Controls.Add(oncheckbox);
+            Date_gbx.Controls.Add(beforecheckbox);
+            Date_gbx.Controls.Add(endcheckbox);
+            Date_gbx.Controls.Add(startcheckbox);
+            Date_gbx.Controls.Add(aftercheckbox);
             Date_gbx.Controls.Add(dateTimePicker1);
             Date_gbx.Controls.Add(label9);
             Date_gbx.Controls.Add(label8);
@@ -513,41 +517,41 @@
             Date_gbx.TabIndex = 5;
             Date_gbx.TabStop = false;
             // 
-            // checkBox3
+            // oncheckbox
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            checkBox3.ForeColor = Color.FromArgb(0, 126, 249);
-            checkBox3.Location = new Point(462, 78);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(46, 24);
-            checkBox3.TabIndex = 4;
-            checkBox3.Text = "on";
-            checkBox3.UseVisualStyleBackColor = true;
+            oncheckbox.AutoSize = true;
+            oncheckbox.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            oncheckbox.ForeColor = Color.FromArgb(0, 126, 249);
+            oncheckbox.Location = new Point(578, 78);
+            oncheckbox.Name = "oncheckbox";
+            oncheckbox.Size = new Size(46, 24);
+            oncheckbox.TabIndex = 4;
+            oncheckbox.Text = "on";
+            oncheckbox.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // beforecheckbox
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            checkBox2.ForeColor = Color.FromArgb(0, 126, 249);
-            checkBox2.Location = new Point(462, 48);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(74, 24);
-            checkBox2.TabIndex = 4;
-            checkBox2.Text = "before";
-            checkBox2.UseVisualStyleBackColor = true;
+            beforecheckbox.AutoSize = true;
+            beforecheckbox.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            beforecheckbox.ForeColor = Color.FromArgb(0, 126, 249);
+            beforecheckbox.Location = new Point(578, 48);
+            beforecheckbox.Name = "beforecheckbox";
+            beforecheckbox.Size = new Size(74, 24);
+            beforecheckbox.TabIndex = 4;
+            beforecheckbox.Text = "before";
+            beforecheckbox.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // aftercheckbox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            checkBox1.ForeColor = Color.FromArgb(0, 126, 249);
-            checkBox1.Location = new Point(462, 18);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(62, 24);
-            checkBox1.TabIndex = 4;
-            checkBox1.Text = "after";
-            checkBox1.UseVisualStyleBackColor = true;
+            aftercheckbox.AutoSize = true;
+            aftercheckbox.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            aftercheckbox.ForeColor = Color.FromArgb(0, 126, 249);
+            aftercheckbox.Location = new Point(578, 19);
+            aftercheckbox.Name = "aftercheckbox";
+            aftercheckbox.Size = new Size(62, 24);
+            aftercheckbox.TabIndex = 4;
+            aftercheckbox.Text = "after";
+            aftercheckbox.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -561,11 +565,11 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label9.ForeColor = Color.FromArgb(0, 126, 249);
-            label9.Location = new Point(343, 19);
+            label9.Location = new Point(353, 19);
             label9.Name = "label9";
-            label9.Size = new Size(278, 20);
+            label9.Size = new Size(363, 20);
             label9.TabIndex = 2;
-            label9.Text = "You need tasks                          this date";
+            label9.Text = "You need tasks that                                       this date";
             // 
             // label8
             // 
@@ -669,6 +673,30 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // startcheckbox
+            // 
+            startcheckbox.AutoSize = true;
+            startcheckbox.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            startcheckbox.ForeColor = Color.FromArgb(0, 126, 249);
+            startcheckbox.Location = new Point(502, 18);
+            startcheckbox.Name = "startcheckbox";
+            startcheckbox.Size = new Size(62, 24);
+            startcheckbox.TabIndex = 4;
+            startcheckbox.Text = "Start";
+            startcheckbox.UseVisualStyleBackColor = true;
+            // 
+            // endcheckbox
+            // 
+            endcheckbox.AutoSize = true;
+            endcheckbox.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            endcheckbox.ForeColor = Color.FromArgb(0, 126, 249);
+            endcheckbox.Location = new Point(502, 48);
+            endcheckbox.Name = "endcheckbox";
+            endcheckbox.Size = new Size(54, 24);
+            endcheckbox.TabIndex = 4;
+            endcheckbox.Text = "End";
+            endcheckbox.UseVisualStyleBackColor = true;
+            // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -749,13 +777,15 @@
         private GroupBox Date_gbx;
         private Label label8;
         private TextBox textBox1;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private CheckBox oncheckbox;
+        private CheckBox beforecheckbox;
+        private CheckBox aftercheckbox;
         private DateTimePicker dateTimePicker1;
         private Label label9;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private Button button3;
+        private CheckBox endcheckbox;
+        private CheckBox startcheckbox;
     }
 }

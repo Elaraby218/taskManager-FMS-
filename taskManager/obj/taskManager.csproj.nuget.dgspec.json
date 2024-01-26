@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "J:\\c#\\taskmanger\\taskManager\\taskManager.csproj": {}
+    "J:\\c#\\taskManager\\taskManager\\taskManager.csproj": {}
   },
   "projects": {
-    "J:\\c#\\taskmanger\\taskManager\\taskManager.csproj": {
+    "J:\\c#\\taskManager\\taskManager\\taskManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\c#\\taskmanger\\taskManager\\taskManager.csproj",
+        "projectUniqueName": "J:\\c#\\taskManager\\taskManager\\taskManager.csproj",
         "projectName": "taskManager",
-        "projectPath": "J:\\c#\\taskmanger\\taskManager\\taskManager.csproj",
+        "projectPath": "J:\\c#\\taskManager\\taskManager\\taskManager.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "J:\\c#\\taskmanger\\taskManager\\obj\\",
+        "outputPath": "J:\\c#\\taskManager\\taskManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,10 @@
               "version": "[8.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.0, )"
             },

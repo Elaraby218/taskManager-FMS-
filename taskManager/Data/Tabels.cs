@@ -102,41 +102,27 @@ namespace taskManager.Data
     public record History
     {
         [Key]
-        [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column(TypeName = "int")]
         public int HistoryId { get; set; }
 
-        [ForeignKey("Task_Table")]
-        [Column(TypeName ="int")]
         public int TaskId { get; set; }
-
-        [ForeignKey("UserTable")]
-        [Column(TypeName = "int")]
         public int UserId { get; set; }
-       
-        [Column(TypeName = "varchar(255)")]
-        [Display(Name = "Name")]
+
+        [StringLength(255)]
         public string Name { get; set; }
-        
-        [Column(TypeName = "varchar(255)")]
-        [Display(Name = "User Name")]
+
+        [StringLength(255)]
         public string User_Name { get; set; }
-      
-        [Column(TypeName = "varchar(255)")]
-        [Display(Name = "Taks Describtion")]
+
+        [StringLength(255)]
         public string Task_describtion { get; set; }
-      
-        [Column(TypeName = "varchar(255)")]
-        [Display(Name = "Start Date")]
+
+        [StringLength(255)]
         public string Date_start { get; set; }
-       
-        [Column(TypeName = "varchar(255)")]
-        [Display(Name = "End Date")]
+
+        [StringLength(255)]
         public string Date_end { get; set; }
 
-        [Column(TypeName = "bit")]
-        [Display(Name = "Is task checked ?")]
         public bool Done { get; set; }
     }
 }

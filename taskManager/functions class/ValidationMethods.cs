@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
+
 namespace taskManager.functions_class
 {
     internal class ValidationMethods
@@ -115,7 +116,9 @@ namespace taskManager.functions_class
 
         public static bool ValidTask(string tasktitle , string taskdescribtion, string start , string end , string timeH)
         {
-            int comp = start.CompareTo(end);
+            DateTime s = Convert.ToDateTime(start);
+            DateTime e = Convert.ToDateTime(end);
+            MessageBox.Show(s.ToString());
             if(String.IsNullOrEmpty(tasktitle)) {
                 MessageBox.Show("Task Title connot be empty" , "Error" , MessageBoxButtons.OK , MessageBoxIcon.Error);
                 return false;
@@ -130,7 +133,7 @@ namespace taskManager.functions_class
                 MessageBox.Show("Task describtion connot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if (string.Compare(end, start) < 0)
+            else if (s>e)
             {
                 MessageBox.Show("End date must be greater than or equal to start date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
