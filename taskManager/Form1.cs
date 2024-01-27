@@ -14,8 +14,8 @@ namespace taskManager
             this.Paint += Form1_Paint;
             Manage.CustomizeButtonAppearance(Login_btn);
             Manage.CustomizeButtonAppearance(Exit_btn);
-            Manage.CustomizeButtonAppearance(Signup_btn);           
-            
+            Manage.CustomizeButtonAppearance(Signup_btn);
+
 
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -46,10 +46,10 @@ namespace taskManager
         private void Login_btn_Click(object sender, EventArgs e)
         {
             longin_form frm = new longin_form();
-           
+
             frm.Show();
             this.Hide();
-            
+
         }
 
         private void Signup_btn_Click(object sender, EventArgs e)
@@ -64,6 +64,11 @@ namespace taskManager
         private void button1_Click(object sender, EventArgs e)
         {
             ManageDatabase.EnsureConnected();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

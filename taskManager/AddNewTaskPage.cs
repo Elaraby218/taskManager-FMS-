@@ -10,20 +10,36 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using taskManager.functions_class;
 using taskManager.Data;
+using System.Runtime.InteropServices;
 
 namespace taskManager
 {
     public partial class AddNewTaskForm : Form
     {
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+
+        private static extern IntPtr CreateRoundRectRgn
+        (
+             int nLeftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nWidthEllipse,
+             int nHeightEllipse
+
+         );
+
         static Main_Form MAIN_FORM;
         static UserTable CurUserr;
         static Task_Table CurTask;
         public AddNewTaskForm()
         {
             InitializeComponent();
-
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             //   Manage.CustomizeButtonAppearance(Add_Task);
-           
+
             this.Paint += Main_Page_Paint;
         }
 
@@ -31,7 +47,7 @@ namespace taskManager
         {
             InitializeComponent();
             //   Manage.CustomizeButtonAppearance(Add_Task);
-           
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             this.Paint += Main_Page_Paint;
             MAIN_FORM = MainForm;
             CurUserr = CurUser;
@@ -44,6 +60,7 @@ namespace taskManager
         public AddNewTaskForm(Task_Table task)
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             //   Manage.CustomizeButtonAppearance(Add_Task);
             Manage.CustomizeButtonAppearance(Add_task_btn);
             Manage.CustomizeButtonAppearance(reset_btn);
@@ -207,6 +224,11 @@ namespace taskManager
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNewTask_pnl_Paint(object sender, PaintEventArgs e)
         {
 
         }

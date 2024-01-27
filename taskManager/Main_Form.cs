@@ -426,6 +426,7 @@ namespace taskManager
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            search_pnl.Controls.Clear();
             if (radioButton1.Checked)
             {
                 string taskname = textBox1.Text;
@@ -1135,6 +1136,11 @@ namespace taskManager
                         }
                     }
                 }
+            }
+
+            if(search_pnl.Controls.Count == 0)
+            {
+                MessageBox.Show("NO TASKS FOUND" , "Search complete" , MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

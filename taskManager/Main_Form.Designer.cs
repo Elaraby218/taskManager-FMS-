@@ -64,6 +64,8 @@
             Date_gbx = new GroupBox();
             oncheckbox = new CheckBox();
             beforecheckbox = new CheckBox();
+            endcheckbox = new CheckBox();
+            startcheckbox = new CheckBox();
             aftercheckbox = new CheckBox();
             dateTimePicker1 = new DateTimePicker();
             label9 = new Label();
@@ -76,8 +78,6 @@
             label6 = new Label();
             label5 = new Label();
             button2 = new Button();
-            startcheckbox = new CheckBox();
-            endcheckbox = new CheckBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -541,6 +541,30 @@
             beforecheckbox.Text = "before";
             beforecheckbox.UseVisualStyleBackColor = true;
             // 
+            // endcheckbox
+            // 
+            endcheckbox.AutoSize = true;
+            endcheckbox.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            endcheckbox.ForeColor = Color.FromArgb(0, 126, 249);
+            endcheckbox.Location = new Point(502, 48);
+            endcheckbox.Name = "endcheckbox";
+            endcheckbox.Size = new Size(54, 24);
+            endcheckbox.TabIndex = 4;
+            endcheckbox.Text = "End";
+            endcheckbox.UseVisualStyleBackColor = true;
+            // 
+            // startcheckbox
+            // 
+            startcheckbox.AutoSize = true;
+            startcheckbox.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            startcheckbox.ForeColor = Color.FromArgb(0, 126, 249);
+            startcheckbox.Location = new Point(502, 18);
+            startcheckbox.Name = "startcheckbox";
+            startcheckbox.Size = new Size(62, 24);
+            startcheckbox.TabIndex = 4;
+            startcheckbox.Text = "Start";
+            startcheckbox.UseVisualStyleBackColor = true;
+            // 
             // aftercheckbox
             // 
             aftercheckbox.AutoSize = true;
@@ -672,30 +696,6 @@
             button2.Text = "Search";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
-            // 
-            // startcheckbox
-            // 
-            startcheckbox.AutoSize = true;
-            startcheckbox.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            startcheckbox.ForeColor = Color.FromArgb(0, 126, 249);
-            startcheckbox.Location = new Point(502, 18);
-            startcheckbox.Name = "startcheckbox";
-            startcheckbox.Size = new Size(62, 24);
-            startcheckbox.TabIndex = 4;
-            startcheckbox.Text = "Start";
-            startcheckbox.UseVisualStyleBackColor = true;
-            // 
-            // endcheckbox
-            // 
-            endcheckbox.AutoSize = true;
-            endcheckbox.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            endcheckbox.ForeColor = Color.FromArgb(0, 126, 249);
-            endcheckbox.Location = new Point(502, 48);
-            endcheckbox.Name = "endcheckbox";
-            endcheckbox.Size = new Size(54, 24);
-            endcheckbox.TabIndex = 4;
-            endcheckbox.Text = "End";
-            endcheckbox.UseVisualStyleBackColor = true;
             // 
             // Main_Form
             // 

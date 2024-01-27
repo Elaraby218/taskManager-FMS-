@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,10 +16,22 @@ namespace taskManager
 {
     public partial class Task_Groub_box : UserControl
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
+
+        private static extern IntPtr CreateRoundRectRgn(
+     int nLeftRect,
+     int nTopRect,
+     int nRightRect,
+     int nBottomRect,
+     int nWidthEllipse,
+     int nHeightEllipse
+
+ );
         public Task_Groub_box(string Task_Title, string Task_Id, string Task_From, string Task_To)
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             Task_ID_txtbox.Text = Task_Id;
             Task_title_txtbox.Text = Task_Title;
             Start_txtbox.Text = Task_From;
@@ -27,6 +40,7 @@ namespace taskManager
         public Task_Groub_box()
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             Task_ID_txtbox.Text = "NULL";
             Task_title_txtbox.Text = "NULL";
             Start_txtbox.Text = "NULL";
@@ -91,6 +105,11 @@ namespace taskManager
                 ManageDatabase.GetUserTasks(ManageSharedValues.CurrentUserId);
                 ManageTasks.ViewTasks(ManageSharedValues.EssintionaForm);
             }
+
+        }
+
+        private void Task_gbx_Enter(object sender, EventArgs e)
+        {
 
         }
     }

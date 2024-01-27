@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewTaskForm));
             AddNewTask_pnl = new Panel();
+            Dicard_changes_btn = new Button();
+            Save_changes_btn = new Button();
             reset_btn = new Button();
             Add_task_btn = new Button();
             button1 = new Button();
             pictureBox1 = new PictureBox();
-            Save_changes_btn = new Button();
-            Dicard_changes_btn = new Button();
             groupBox6 = new GroupBox();
             label6 = new Label();
             Priority = new TrackBar();
@@ -87,6 +87,37 @@
             AddNewTask_pnl.Name = "AddNewTask_pnl";
             AddNewTask_pnl.Size = new Size(1377, 721);
             AddNewTask_pnl.TabIndex = 1;
+            AddNewTask_pnl.Paint += AddNewTask_pnl_Paint;
+            // 
+            // Dicard_changes_btn
+            // 
+            Dicard_changes_btn.BackColor = Color.White;
+            Dicard_changes_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
+            Dicard_changes_btn.FlatStyle = FlatStyle.Flat;
+            Dicard_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Dicard_changes_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            Dicard_changes_btn.Location = new Point(1018, 611);
+            Dicard_changes_btn.Name = "Dicard_changes_btn";
+            Dicard_changes_btn.Size = new Size(156, 39);
+            Dicard_changes_btn.TabIndex = 22;
+            Dicard_changes_btn.Text = "Discard";
+            Dicard_changes_btn.UseVisualStyleBackColor = false;
+            Dicard_changes_btn.Click += Dicard_changes_btn_Click;
+            // 
+            // Save_changes_btn
+            // 
+            Save_changes_btn.BackColor = Color.White;
+            Save_changes_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
+            Save_changes_btn.FlatStyle = FlatStyle.Flat;
+            Save_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Save_changes_btn.ForeColor = Color.FromArgb(0, 126, 249);
+            Save_changes_btn.Location = new Point(856, 611);
+            Save_changes_btn.Name = "Save_changes_btn";
+            Save_changes_btn.Size = new Size(156, 39);
+            Save_changes_btn.TabIndex = 21;
+            Save_changes_btn.Text = "Save";
+            Save_changes_btn.UseVisualStyleBackColor = false;
+            Save_changes_btn.Click += Save_changes_btn_Click;
             // 
             // reset_btn
             // 
@@ -143,36 +174,6 @@
             pictureBox1.TabIndex = 21;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // Save_changes_btn
-            // 
-            Save_changes_btn.BackColor = Color.White;
-            Save_changes_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
-            Save_changes_btn.FlatStyle = FlatStyle.Flat;
-            Save_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            Save_changes_btn.ForeColor = Color.FromArgb(0, 126, 249);
-            Save_changes_btn.Location = new Point(856, 611);
-            Save_changes_btn.Name = "Save_changes_btn";
-            Save_changes_btn.Size = new Size(156, 39);
-            Save_changes_btn.TabIndex = 21;
-            Save_changes_btn.Text = "Save";
-            Save_changes_btn.UseVisualStyleBackColor = false;
-            Save_changes_btn.Click += Save_changes_btn_Click;
-            // 
-            // Dicard_changes_btn
-            // 
-            Dicard_changes_btn.BackColor = Color.White;
-            Dicard_changes_btn.FlatAppearance.BorderColor = Color.FromArgb(0, 126, 249);
-            Dicard_changes_btn.FlatStyle = FlatStyle.Flat;
-            Dicard_changes_btn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            Dicard_changes_btn.ForeColor = Color.FromArgb(0, 126, 249);
-            Dicard_changes_btn.Location = new Point(1018, 611);
-            Dicard_changes_btn.Name = "Dicard_changes_btn";
-            Dicard_changes_btn.Size = new Size(156, 39);
-            Dicard_changes_btn.TabIndex = 22;
-            Dicard_changes_btn.Text = "Discard";
-            Dicard_changes_btn.UseVisualStyleBackColor = false;
-            Dicard_changes_btn.Click += Dicard_changes_btn_Click;
             // 
             // groupBox6
             // 
